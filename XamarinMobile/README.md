@@ -2,7 +2,7 @@
 
 ### Challenge
 
-Create a new project in Xamarin Studio and add the Xamarin.Mobile framework from the Component Store. Place an image control and a label on the form 
+Create a new project in Xamarin Studio and add the Xamarin.Mobile framework from the Component Store. Use the Xamarin.Mobile `Geolocator` class to display the user's latitude and longitude. Use the Xamarin.Mobile `MediaPicker` class to activate the camera and display a photo captured by the user.
 
 ### Walkthrough
 
