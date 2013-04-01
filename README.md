@@ -1,8 +1,17 @@
-quickhack
-=========
+# Mini-Hacks for Evolve 2013
 
-Quick Hacks for Evolve 2013
+### Challenge
 
-Welcome to Xamarin Evolve 2013 - QuickHacks!
+Complete any four (4) of the following mini-hacks to receive a prize! 
 
-Complete any 4 Quick Hacks to receive a Prize!
+### List
+
+* Azure Mobile 
+* Parse
+* SQLCipher
+* ZXing
+* Xamarin.Mobile
+* Radial Progress UI
+* Themes - iOS specific
+* NFC - Android specific
+
