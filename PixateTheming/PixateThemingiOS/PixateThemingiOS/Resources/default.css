@@ -1,0 +1,10 @@
+
+#main {
+	background-color: #4a4e4f;
+}
+
+#btn1 {
+	background-color: linear-gradient(#20364f, rgb(3, 103, 255));
+	border-radius: 10px;
+	color: white;
+}
