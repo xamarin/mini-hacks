@@ -41,6 +41,6 @@ buttonScan.TouchUpInside += (sender, e) => {
   });
 };
 ```
-* Run your application on a device! Hit the Scan button and hold the device steady in front of the screen so that it can read the following QR code:
+* Run your application on a device! You can use [this QR code](https://github.com/xamarin/mini-hacks/blob/master/QRScanner/qrcode.png) to make sure that it works.
 
 
