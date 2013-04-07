@@ -4,7 +4,7 @@
 
 Create a new project in Xamarin Studio and add the Radial Progress component from the Component Store. Place the Radial Progress control in the center of the application and add a button below that will increment the value of the progress control when clicked.
 
-### Walkthrough
+### Walkthrough (iOS)
 
 * In Xamarin Studio, Create a new single-view iOS project called `RadialProgressControl`
 
@@ -43,3 +43,60 @@ buttonAdd.TouchUpInside += (sender, e) => {
 ```
 
 * Run the app again and click the button to see the progress control fill up!
+
+### Walkthrough (Android)
+
+* In Xamarin Studio, Create a new Android Application project called `RadialProgressControl`
+
+* Using Xamarin Studio’s built-in Component Store, add the free Radial Progress component to your project
+
+* Double-click the main.axml file in the Xamarin Studio solution pane under Resources/layout
+
+* Change the default button text to `Increment by 10`
+
+* Edit the source of the main.axml file
+
+* Add the following code after the Button:
+
+```
+<radialprogress.RadialProgressView
+	android:id="@+id/progressView"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	min_value="0"
+	max_value="100"
+	progress_type="big"
+	hide_label="false"
+	progress_color="#6666CC" />
+```
+
+* Save the layout file and return focus MainActivity.cs
+
+* add a `using RadialProgress;` line immediately below the other using statements at the top of the file. (note: you may require to close and reopen the solution for references to update)
+
+```
+using RadialProgress;
+```
+
+* Add a reference to the RadialProgressView with the following code using FindViewById:
+
+```
+var progressView = FindViewById<RadialProgressView> (Resource.Id.progressView);
+```
+
+* Change the contents of `button.Click += delegate` to the following:
+
+```
+if (progressView.IsDone)
+	progressView.Reset();
+else
+	progressView.Value += 10;
+```
+
+* Run the app again and click the button to see the progress control fill up!
+
+### Additional Challenges
+
+* Use a timer to increment the RadialProgressView
+
+* Use the RadialProgressView with a file download
