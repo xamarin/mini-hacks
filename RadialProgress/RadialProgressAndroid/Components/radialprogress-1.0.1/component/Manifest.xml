@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="radialprogress">
+  <name>Radial Progress</name>
+  <publisher>Touch Instinct</publisher>
+  <publisher-url>http://touchinstinct.com/</publisher-url>
+  <version>1.0.1</version>
+  <summary>A stylish, circular progress view.</summary>
+  <samples>
+    <sample id="RadialProgress.iOS.Sample">
+      <name>iOS Samples.</name>
+      <summary>iOS Samples</summary>
+    </sample>
+    <sample id="RadialProgress.Android.Sample">
+      <name>Android Sample.</name>
+      <summary>Android Sample</summary>
+    </sample>
+  </samples>
+</component>
