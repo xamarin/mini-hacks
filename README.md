@@ -16,6 +16,7 @@ To get started, click one of the mini-hacks below and attempt  to complete the c
 * [ZXing](https://github.com/xamarin/mini-hacks/tree/master/QRScanner)
 * [Xamarin.Mobile](https://github.com/xamarin/mini-hacks/tree/master/XamarinMobile)
 * [Radial Progress UI](https://github.com/xamarin/mini-hacks/tree/master/RadialProgress)
+* [Google Maps](https://github.com/xamarin/GoogleMaps)
 
 ## How to claim your stickers and prize!
 * Visit our Mini-Hacks booth next to the Darwin Lounge, a couple of staffers will be there to verify completion of your app, and give you a sticker for the hack.
