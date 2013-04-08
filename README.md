@@ -1,4 +1,4 @@
-# Evolve 2013 - Mini-Hacks
+![](https://dl.dropbox.com/u/217582/xamarin/minihacks-header.png)
 
 We invite you to join the Evolve Mini-Hacks challenge: a fast, easy, and fun way to explore mobile development with Xamarin. Each mini-hack consists of a small programming challenge involving a specific set of APIs or a particular third-party programming framework. 
 
