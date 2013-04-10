@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="parse">
+  <name>Parse</name>
+  <publisher>Parse</publisher>
+  <publisher-url>http://www.parse.com/</publisher-url>
+  <version>1.1.1</version>
+  <summary>Store your app's data in the cloud. No server necessary.</summary>
+  <samples>
+    <sample id="ParseStarterProject">
+      <name>iOS Sample.</name>
+      <summary>iOS Sample</summary>
+    </sample>
+  </samples>
+</component>
