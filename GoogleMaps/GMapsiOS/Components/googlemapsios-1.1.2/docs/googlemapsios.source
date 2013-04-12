@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<monodoc>
+  <node label="Xamarin Components" name="components" parent="libraries" />
+  <node label="Google Maps" name="googlemapsios" parent="components" />
+  <source provider="ecma" basefile="googlemapsios" path="googlemapsios" />
+</monodoc>

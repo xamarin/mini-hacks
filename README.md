@@ -10,7 +10,7 @@ To get started, click one of the mini-hacks below and attempt  to complete the c
 
 ## Challenges
 
-* [Azure Mobile](https://github.com/xamarin/mini-hacks/tree/master/WindowsAzure)
+* [Windows Azure](https://github.com/xamarin/mini-hacks/tree/master/WindowsAzure)
 * [Parse](https://github.com/xamarin/mini-hacks/tree/master/Parse)
 * [SQLCipher](https://github.com/xamarin/mini-hacks/tree/master/SQLCipher)
 * [ZXing](https://github.com/xamarin/mini-hacks/tree/master/QRScanner)

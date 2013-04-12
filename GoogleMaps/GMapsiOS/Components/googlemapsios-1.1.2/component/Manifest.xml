@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="googlemapsios">
+  <name>Google Maps</name>
+  <publisher>Google Inc.</publisher>
+  <publisher-url>https://developers.google.com/maps/documentation/ios/</publisher-url>
+  <version>1.1.2</version>
+  <summary>Add rich, data-driven, interactive Google Maps to your app.</summary>
+  <samples>
+    <sample id="GoogleMapsSample">
+      <name>iOS Sample.</name>
+      <summary>iOS Sample</summary>
+    </sample>
+  </samples>
+</component>
