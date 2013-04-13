@@ -77,3 +77,10 @@ Create a new project in Xamarin Studio and add the Parse famework from the Compo
 	};
 	```
 * Run the app, touch the button, and then head over to your [Parse](https://parse.com/apps) application’s DataBrowser to see the new “Note” object that you’ve created and stored with Parse!
+
+### Additional Challenges
+* Create a user sign-up/login page using ParseUser
+
+* Log in using the Xamarin Facebook component, then use ParseFacebookUtils to create and log in a ParseUser
+ 
+* Save a picture taken with the device's camera as a ParseFile
