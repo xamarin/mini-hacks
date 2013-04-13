@@ -53,7 +53,7 @@ public override void LoadView ()
 			                                 zoom:17,
 			                                 bearing:15,
 			                                 viewingAngle:15);
-			mapView = MapView.FromCamera (RectangleF.Empty, camera);
+			mapView = MapView.FromCamera (View.Bounds, camera);
 			mapView.MapType = MapViewType.Normal;
 			mapView.MyLocationEnabled = true;
 			View = mapView;
@@ -73,6 +73,9 @@ public override void ViewWillDisappear (bool animated)
 
 ```
 
+### Additional Challenges: 
+* Add a Marker to Evolve 2013 using MapView.AddMarker()
+* Add a UIButton to show your current location
 
 ### Walkthrough (v2 Android version) (Difficulty: advanced)
 
@@ -104,6 +107,8 @@ public override void ViewWillDisappear (bool animated)
 	BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75;com.example.android.mapexample
 	```
 	* Copy the API key (for later use in your app)
+	
+**Android Project**
 
 * In Xamarin Studio, open the starter project titled "GMapsAndroid" included in this repo. 
 

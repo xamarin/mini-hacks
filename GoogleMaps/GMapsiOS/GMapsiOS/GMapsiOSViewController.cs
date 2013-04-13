@@ -11,6 +11,7 @@ namespace GMapsiOS {
 
 		MapView mapView;
 		UISwitch satelliteSwitch;
+		UIButton currentLocNow;
 
 		public GMapsiOSViewController (IntPtr handle) : base (handle)
 		{
@@ -29,32 +30,52 @@ namespace GMapsiOS {
 			
 			var camera = CameraPosition.FromCamera (latitude: 30.2652898, 
 			                                        longitude: -97.7386826, 
-			                                        zoom:17,
-			                                        bearing:15,
-			                                        viewingAngle:15);
-			mapView = MapView.FromCamera (RectangleF.Empty, camera);
+			                                        zoom: 17,
+			                                        bearing: 15,
+			                                        viewingAngle: 15);
+			mapView = MapView.FromCamera (View.Bounds, camera);
 			mapView.MapType = MapViewType.Normal;
 			mapView.MyLocationEnabled = true;
-			View = mapView;
+			//mapView.Frame = View.Frame;
 
-			satelliteSwitch = new UISwitch();
-			satelliteSwitch.On = true;
+			var hiltonOptions = new MarkerOptions();
+
+			hiltonOptions.Position = new MonoTouch.CoreLocation.CLLocationCoordinate2D(30.2652898, -97.7386826);
+			hiltonOptions.Title = "Evolve 2013";
+			hiltonOptions.Snippet = "Austin, TX";
+			mapView.AddMarker(hiltonOptions);
+
+			View.Add (mapView);
+
+			satelliteSwitch = new UISwitch ();
+			satelliteSwitch.Frame = new RectangleF(11.0f, 11.0f, satelliteSwitch.Frame.Width, satelliteSwitch.Frame.Height);
+			satelliteSwitch.On = false;
 			View.Add (satelliteSwitch);
 
+			currentLocNow = UIButton.FromType (UIButtonType.RoundedRect);
+			currentLocNow.Frame = new RectangleF(50, 100, 100, 20);
+			currentLocNow.Center = new PointF (View.Frame.Width/2, View.Frame.Height - 20.0f);
+			currentLocNow.SetTitle ("ShowMyLoc", UIControlState.Normal);
+			View.AddSubview (currentLocNow);
 		}
 		
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
+
+//			currentLocNow.Frame = new RectangleF(100f, 100f, 100f, 100f);
+			
+			currentLocNow.TouchUpInside += (sender, e) => 
+			{
+				mapView.AnimateToLocation(mapView.MyLocation.Coordinate);
+			};
+
 			satelliteSwitch.ValueChanged += (sender, e) => 
 			{
-				if (satelliteSwitch.On)
-				{
+				if (satelliteSwitch.On) {
 					mapView.MapType = MapViewType.Hybrid;
-				}
-				else
-				{
+				} else {
 					mapView.MapType = MapViewType.Normal;
 				}
 			};

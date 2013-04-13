@@ -100,9 +100,6 @@
       <DependentUpon>GMapsiOSViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <XamarinComponentReference Include="googlemapsios">
