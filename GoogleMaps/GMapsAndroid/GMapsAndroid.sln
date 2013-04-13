@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMapsAndroid", "GMapsAndroid\GMapsAndroid.csproj", "{499FD469-5FBF-4D92-AC1D-064FCAFAA847}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooglePlayServicesBinding", "GooglePlayServicesBinding\GooglePlayServicesBinding.csproj", "{1251DB1F-890B-4B49-8F6C-3A5C5EC72A42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1251DB1F-890B-4B49-8F6C-3A5C5EC72A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1251DB1F-890B-4B49-8F6C-3A5C5EC72A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1251DB1F-890B-4B49-8F6C-3A5C5EC72A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1251DB1F-890B-4B49-8F6C-3A5C5EC72A42}.Release|Any CPU.Build.0 = Release|Any CPU
 		{499FD469-5FBF-4D92-AC1D-064FCAFAA847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{499FD469-5FBF-4D92-AC1D-064FCAFAA847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{499FD469-5FBF-4D92-AC1D-064FCAFAA847}.Release|Any CPU.ActiveCfg = Release|Any CPU
