@@ -14,7 +14,7 @@ https://code.google.com/apis/console/
 
 https://raw.github.com/xamarin/monodroid-samples/master/MapsAndLocationDemo_v2/README.md
 
-### Walkthrough (iOS Version - Component Store version) (Difficulty: easy)
+## Walkthrough (iOS Version - Component Store version) (Difficulty: easy)
 
 * Start a new iOS iPhone Storyboard Single-View Appplication project, name it GMapsiOS
 * Add Google Maps component by going to the Component Store
@@ -77,7 +77,7 @@ public override void ViewWillDisappear (bool animated)
 * Add a Marker to Evolve 2013 using MapView.AddMarker()
 * Add a UIButton to show your current location
 
-### Walkthrough (v2 Android version) (Difficulty: advanced)
+## Walkthrough (v2 Android version) (Difficulty: advanced)
 
 **Setup Google API**
 
@@ -98,51 +98,56 @@ public override void ViewWillDisappear (bool animated)
 * Add the API Key to your application
 
 	* Goto https://developers.google.com/
+	
 	* Click on [API Console](https://code.google.com/apis/console/)
+	
 	* Create a new Project if necessary 
+	
 	* Click on `API Access` on the left menu.
+	
 	* Click on `Create new Android key…`
+	
 	* Input your SHA-1 fingerprint with a semicolon and a package name. For example: 
+	
 	```
-	BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75;com.example.android.mapexample
+	BB:0D:AC:74:D3:21:E1:43:XX:XX:XX:XX:XX:XX:XX:66:6E:44:5D:75;gmapsAndroid.gmapsAndroid
 	```
+	
 	* Copy the API key (for later use in your app)
 	
 **Android Project**
 
-* In Xamarin Studio, open the starter project titled "GMapsAndroid" included in this repo. 
+* In Xamarin Studio, open the starter project titled "gmapsAndroid" included in this repo. 
 
 * Open the main.axml layout file - view in Source mode
 
-* Add the API key to the MapFragment
-
-* Drag a `UIButton` control from the Xcode object library into the application view. In the property editor, change its label to say "Scan"
-
-* Drag a `UILabel` control onto the view and place it near the top. Resize it horizontally so that it stretches across the entire top of the view.
-
-* Activate Xcode’s assistant editor view to expose the generated Objective-C code
-
-* Create an outlet for the button and name it `buttonScan`
-
-* Create an outlet for the label and name it `labelOutput`
-
-* Save the storyboard file and return focus to Xamarin Studio
-
-* Add the following lines to the view controller source file, right under the existing `using` statements at the top of the file:
+* Add the following the layout
 
 ```
-using ZXing;
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.MapFragment" />
 ```
 
-* Add the following code to the `ViewDidLoad` method to make the application launch the ZXing scanner when the Scan button is pressed and display the captured value in the label when a QR code is scanned:
+* Add the following to the AndroidManifest.xml 
+* (if AndroidManifest.xml does not exist, create a new one by opening the project settings, and go to `Android Application` and Add the Android Manifest)
 
 ```
-buttonScan.TouchUpInside += (sender, e) => {
-  var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-  scanner.Scan().ContinueWith(t => {
-    if (t.Result != null)
-      InvokeOnMainThread(() => labelOutput.Text = t.Result.Text);
-  });
-};
+<application android:label="GMapsAndroid">
+	<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR API KEY" />
+</application>
+<permission android:name="com.xamarin.minihack.gmapsandroid.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+	<uses-permission android:name="com.example.mapdemo.permission.MAPS_RECEIVE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
 ```
-* Run your application on a device! You can use [this QR code](https://github.com/xamarin/mini-hacks/blob/master/QRScanner/qrcode.png) to make sure that it works.
+
+* Compile
