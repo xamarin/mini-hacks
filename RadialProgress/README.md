@@ -32,13 +32,16 @@ var progressView = new RadialProgressView {
 View.AddSubview (progressView);
 ```
 
-* Add running the application to make sure that the widget appears correctly in the center of the form.
+* Try running the application to make sure that the widget appears correctly in the center of the form.
 
 * Add the following code to the `ViewDidLoad` method to make the application increment the value of the progress control when the button is pressed:
 
 ```
 buttonAdd.TouchUpInside += (sender, e) => {
-      progressView.Value += 0.05f;
+      if (progressView.IsDone)
+	      progressView.Reset();
+      else
+	      progressView.Value += 0.1f;
 };
 ```
 
