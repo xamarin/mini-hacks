@@ -4,6 +4,10 @@
 
 Create a new project in Xamarin Studio and add the ZXing framework from the Component Store. Use the ZXing framework to create a barcode scanner that displays the text value of scanned QR codes in a label.
 
+### Requirements
+* Must deploy and test on device
+* Mono 3.0.9 or later (upgrade via Beta or Alpha channels)
+
 ### Walkthrough (iOS version)
 
 * In Xamarin Studio, Create a new single-view iOS project called `ZXingScanner`
@@ -41,7 +45,8 @@ buttonScan.TouchUpInside += (sender, e) => {
   });
 };
 ```
-* Run your application on a device! You can use [this QR code](https://github.com/xamarin/mini-hacks/blob/master/QRScanner/qrcode.png) to make sure that it works.
+* Run your application on a device! You can use this QR Code to make sure that it works.
+![QR code](qrcode.png)
 
 ### Walkthrough (Android Version)
 
@@ -85,4 +90,5 @@ button.Click += delegate
 <uses-permission android:name="android.permission.CAMERA" />
 ````
 
-* Run your application on a device! You can use [this QR code](https://github.com/xamarin/mini-hacks/blob/master/QRScanner/qrcode.png) to make sure that it works.
+* Run your application on a device! You can use this QR Code to make sure that it works.
+![QR code](qrcode.png)

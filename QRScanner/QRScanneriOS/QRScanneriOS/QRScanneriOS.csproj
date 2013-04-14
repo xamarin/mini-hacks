@@ -107,7 +107,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <XamarinComponentReference Include="zxing.net.mobile">
-      <InstallationInProgress>True</InstallationInProgress>
+      <InstallationInProgress>False</InstallationInProgress>
       <Version>1.3.3</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
