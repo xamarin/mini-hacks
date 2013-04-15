@@ -14,7 +14,7 @@ The walkthrough below should help you with the challenge, but you can also get i
 
 
 #####Bonus Challenge #1
-For bonus points--connect your app to blob storage and add a service from the Windows Azure Store to your app.
+For bonus points--connect your app to a service from the Windows Azure Store to your app.
 
 <b>Prize?</b> A bottle opener for all the craft brews our friends at Xamarin will be providing.
 
@@ -35,11 +35,19 @@ Also be sure to catch Paul's session--[Building Connected, Cross-Platform Mobile
 
 * Click New --> Compute --> Mobile Service --> Create.  Then specify URL and database login/password order to create a new Mobile Service and the associated SQL database.
 
-*  Go to the 'DATA' tab then click the 'Create' button at the bottom to add a new table called 'TodoItem' to your SQL database.
+* Select your new mobile service
 
-* On the dashboard, click 'Manage Keys' and copy your Application and Master Keys to a text file.
+* Go to the 'DATA' tab then click the 'Create' button at the bottom to add a new table called 'TodoItem' to your SQL database.
 
-* Fire up Xamarin Studio and using the built-in Component Store (Project --> Get More Components), add the free Azure Mobile Services component to your project. (If you aren't working on an app at the moment, we recommend grabbing the [Tasky](http://docs.xamarin.com/samples/Tasky) sample app from Xamarin for this challenge.)
+* On the dashboard tab, copy your application URL to a text file
+
+* Click 'Manage Keys' and copy your Application Key to the text file.
+
+* Fire up Xamarin Studio and select the iOS --> Universal --> Empty project. 
+
+* Using the built-in Component Store (Project --> Get More Components), add the free Azure Mobile Services component to your project.
+
+* Add a reference to the System.Runtime.Serialization and MonoTouch.Dialog-1 assemblies
 
 * Copy over the following code into your AppDelegate.cs file to connect your Xamarin Studio project to the Mobile Service you created in the Windows Azure portal:
 
@@ -53,9 +61,14 @@ public static MobileServiceClient MobileService = new MobileServiceClient(
 );
 ```
 
-* Now that you've connected your project to Mobile Services, store data in the table you created earlier using the following code snippet:
+* Replace the placeholder strings above with the application URL and application key that you copied earlier
+
+* Now that you've connected your project to Mobile Services, add a class for your todo items:
 
 ```CSharp
+using System.Runtime.Serialization;
+...
+
 public class TodoItem
 {
     public int Id { get; set; }
@@ -64,48 +77,77 @@ public class TodoItem
     [DataMember (Name = "complete")]
     public bool Complete { get; set; }
 }
-
-...
-
-this.table = MobileService.GetTable<TodoItem>();
-this.table.Where (ti => !ti.Complete).ToListAsync()
-    .ContinueWith (t => { this.items = t.Result; }, scheduler);
 ```
 
-* In iOS, add a Rounded Rect Button to the MainView.cs file and create an outlet for the UIbutton named 'btn.'
-
-* Add a handler to the button using the snippet below:
+* Next you'll need to add a view controller to display and create todo items:
 
 ```CSharp
-btnAdd.TouchUpInside += (sender, e) => 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
+using MonoTouch.Dialog;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+...
+
+	public class MiniHackViewController: DialogViewController
 	{
-		var todo = new TodoItem();
-		todo.Text = txtTask.Text; // hard code it or use a form.
-		todo.Complete = swComplete.On; // same
-		MobileService.GetTable<TodoItem>().InsertAsync(todo);
-	};
+		IMobileServiceTable<TodoItem> table;
+		TaskScheduler scheduler;
+		
+		public MiniHackViewController() : base(UITableViewStyle.Grouped, null)
+		{
+			table = AppDelegate.MobileService.GetTable<TodoItem>();
+			scheduler = TaskScheduler.FromCurrentSynchronizationContext();
+		}
+		
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			Refresh ();
+		}
+		
+		private void Refresh()
+		{
+			table.Where(ti => !ti.Complete).ToListAsync()
+				.ContinueWith(task => PopulateItems(task.Result), scheduler );
+		}
+		
+		private void PopulateItems(List<TodoItem> items)
+		{
+			var inputElement = new EntryElement("Todo", "Enter your todo item", string.Empty);
+			var todoItemElements = items.Select(todoItem => new StringElement(todoItem.Text)).ToList();
+			
+			Root = new RootElement("Todos") {
+				new Section() {
+					inputElement,
+					new StyledStringElement("Add", () => {
+						var item = new TodoItem { Text = inputElement.Value };
+						table.InsertAsync(item).ContinueWith(_ => Refresh());
+					}) { Alignment = UITextAlignment.Center } 
+				},
+				new Section("Todo Items") { todoItemElements }
+			};
+		}
+	}
 ```
+
+* Finally, you need to wire up this new view controller by adding this line to the FinishedLaunching handler in your AppDelegate:
+
+```CSharp
+window.RootViewController = new UINavigationController(new MiniHackViewController());
+```
+
+* Run the application and add some todo items
 
 * If you head back to the [Windows Azure Portal](manage.windowsazure.com), you'll see that items you add to the list are now stored in your SQL database.
 
 * Get fired up that you're up and running with Mobile Services and go get verified with the Microsoft team to secure your badge.
 
 #####Bonus Challenge #1 Walkthrough
-
-Blob Storage
-
-* To access blob storage from your Mobile Services application, go to the 'DATA' tab and select TodoItem table.  
-
-* On the 'SCRIPT' tab, select the whichever operation you'd like and copy in the following code to use the “azure” module within the Windows Azure SDK for Node.js.  Once you obtain that reference, you can query or insert data to that blob. 
-
-
-```CSharp
-var azure = require('azure');
-var blobService = azure.createBlobService("<< account name >>",
-                                            "<< access key >>");
-```
-
-Windows Azure Store
 
 * The Windows Azure Store contains services and data sets that can be useful in your app.
 
@@ -178,7 +220,10 @@ function sendEmail(item) {
 
 * To get started with push notifications, head to the 'PUSH' tab and upload your Apple Developer Certificate. (More details on getting an Apple Developer Certificate can be found [here](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-push-ios/).)
 
-* Once you have an Apple developer certificate, add the following to your AppDelegate.cs file.  The insert code will be able to use the AppDelegate.DeviceToken property and include that in the insert item so that the script can use it to send the push notification.
+* Once you have an Apple developer certificate, you must update your project settings to use the provising profile and identifier you created. Double click your project in Xamarin Studio and go to the iOS Application section and enter your identifier. Then go to the iOS Bundle Signing section and select your provisioning profile
+
+
+* Add the following to your AppDelegate.cs file.  The insert code will be able to use the AppDelegate.DeviceToken property and include that in the insert item so that the script can use it to send the push notification.
 
 ```C#
 public static string DeviceToken { get; privateset; }
