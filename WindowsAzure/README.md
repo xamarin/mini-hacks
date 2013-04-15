@@ -1,4 +1,4 @@
-# Windows Auzre Mobile Services
+# Windows Azure Mobile Services
 
 ### The Challenge
 
@@ -14,7 +14,7 @@ The walkthrough below should help you with the challenge, but you can also get i
 
 
 #####Bonus Challenge #1
-For bonus points--okay, really a Mobile Services t-shirt and bottle opener--connect your app to blob storage and add a service from the Windows Azure Store to your app.
+For bonus points--connect your app to blob storage and add a service from the Windows Azure Store to your app.
 
 <b>Prize?</b> A bottle opener for all the craft brews our friends at Xamarin will be providing.
 
@@ -35,16 +35,15 @@ Also be sure to catch Paul's session--[Building Connected, Cross-Platform Mobile
 
 * Click New --> Compute --> Mobile Service --> Create.  Then specify URL and database login/password order to create a new Mobile Service and the associated SQL database.
 
-
 *  Go to the 'DATA' tab then click the 'Create' button at the bottom to add a new table called 'TodoItem' to your SQL database.
 
 * On the dashboard, click 'Manage Keys' and copy your Application and Master Keys to a text file.
 
-* Fire up Xamarin Studio and using the built-in Component Store (Project --> Get More Components), add the free Mobile Services component to your project. (If you aren't working on an app at the moment, we recommend grabbing the [Tasky](http://docs.xamarin.com/samples/Tasky) sample app from Xamarin for this challenge.)
+* Fire up Xamarin Studio and using the built-in Component Store (Project --> Get More Components), add the free Azure Mobile Services component to your project. (If you aren't working on an app at the moment, we recommend grabbing the [Tasky](http://docs.xamarin.com/samples/Tasky) sample app from Xamarin for this challenge.)
 
 * Copy over the following code into your AppDelegate.cs file to connect your Xamarin Studio project to the Mobile Service you created in the Windows Azure portal:
 
-```
+```CSharp
 using Microsoft.WindowsAzure.MobileServices;
 ...
 
@@ -56,7 +55,7 @@ public static MobileServiceClient MobileService = new MobileServiceClient(
 
 * Now that you've connected your project to Mobile Services, store data in the table you created earlier using the following code snippet:
 
-```
+```CSharp
 public class TodoItem
 {
     public int Id { get; set; }
@@ -77,7 +76,7 @@ this.table.Where (ti => !ti.Complete).ToListAsync()
 
 * Add a handler to the button using the snippet below:
 
-```
+```CSharp
 btnAdd.TouchUpInside += (sender, e) => 
 	{
 		var todo = new TodoItem();
@@ -91,7 +90,6 @@ btnAdd.TouchUpInside += (sender, e) =>
 
 * Get fired up that you're up and running with Mobile Services and go get verified with the Microsoft team to secure your badge.
 
-
 #####Bonus Challenge #1 Walkthrough
 
 Blob Storage
@@ -101,12 +99,11 @@ Blob Storage
 * On the 'SCRIPT' tab, select the whichever operation you'd like and copy in the following code to use the “azure” module within the Windows Azure SDK for Node.js.  Once you obtain that reference, you can query or insert data to that blob. 
 
 
-```
+```CSharp
 var azure = require('azure');
 var blobService = azure.createBlobService("<< account name >>",
                                             "<< access key >>");
 ```
-
 
 Windows Azure Store
 
@@ -120,7 +117,7 @@ Windows Azure Store
 
 * On the 'Insert' script, replace the Insert function with the below code in order to trigger an email each time a new item is inserted to the 'ToDoItem' table.
 
-```
+```js
 var SendGrid = require('sendgrid').SendGrid;
 
 
@@ -137,7 +134,6 @@ function insert(item, user, request) {
 
 function sendEmail(item) {
     var sendgrid = new SendGrid('**username**', '**password**');       
-
 
     sendgrid.send({
         to: '**email-address**',
@@ -166,27 +162,28 @@ function sendEmail(item) {
 
 * Back in Xamarin Studio, add the following code to a view controller.  This code wires login up to an iOS action such as clicking a login button.
 
-```
-     partial void Login()
-           {
-               	AppDelegate.MobileService.LoginAsync(this, MobileServiceAuthenticationProvider.Twitter)               
-               	.ContinueWith(t => {
-                          BeginInvokeOnMainThread (() => {
-                                var user = t.Result;
-                                var alert = new UIAlertView("Welcome!",  
+```CSharp
+    partial void Login()
+    {
+        AppDelegate.MobileService.LoginAsync(this, MobileServiceAuthenticationProvider.Twitter).ContinueWith(t => 
+        {
+            BeginInvokeOnMainThread (() => 
+            {
+            	var user = t.Result;
+            	var alert = new UIAlertView("Welcome!",  
                                 	"You are now logged in and your user id is " 
                                 	+ user.UserId, null, "OK");                                                       
-                                alert.Show ();
-                           } );
-                     } );
-           }
+                alert.Show ();
+            });
+        });
+    }
 ```
 
 * To get started with push notifications, head to the 'PUSH' tab and upload your Apple Developer Certificate. (More details on getting an Apple Developer Certificate can be found [here](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-push-ios/).)
 
 * Once you have an Apple developer certificate, add the following to your AppDelegate.cs file.  The insert code will be able to use the AppDelegate.DeviceToken property and include that in the insert item so that the script can use it to send the push notification.
 
-```
+```CSharp
 public static string DeviceToken { get; privateset; }
  
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -217,7 +214,7 @@ public override void ReceivedRemoteNotification (UIApplication application, NSDi
 
 * Hit 'SCRIPT' and replace the existing function under 'Insert' with the below in order to send a push notification every time a new record is added to the table.  Don't forget to hit save!
 
-```
+```js
 function insert(item, user, request) {
     request.execute();
     // Set timeout to delay the notification, to provide time for the 

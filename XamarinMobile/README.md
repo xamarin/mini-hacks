@@ -4,9 +4,12 @@
 
 Create a new project in Xamarin Studio and add the Xamarin.Mobile framework from the Component Store. Use the Xamarin.Mobile `Geolocator` class to display the user's latitude and longitude. Use the Xamarin.Mobile `MediaPicker` class to activate the camera and display a photo captured by the user.
 
-### Walkthrough
+### Requirements
+* iOS - requires device to work Camera example
 
-* In Xamarin Studio, Create a new single-view iOS project called `XamarinMobileComponent`
+### Walkthrough (iOS) Difficulty: Easy
+
+* In Xamarin Studio, Create a new single-view storyboard iOS project called `XamarinMobileComponent`
 
 * Using Xamarin Studio's built-in Component Store, add the free Xamarin.Mobile component to your project
 
@@ -34,7 +37,7 @@ Create a new project in Xamarin Studio and add the Xamarin.Mobile framework from
 
 * Add the following lines to the view controller source file, right under the existing `using` statements at the top of the file:
 
-```
+```C#
 using System.Threading.Tasks;
 using Xamarin.Geolocation;
 
@@ -43,12 +46,12 @@ using Xamarin.Media;
 
 * Add the following code to the `ViewDidLoad` method to make the application obtain the user's position and display it in the label when the location button is pressed:
 
-```
+```C#
 buttonLocation.TouchUpInside += (sender, e) => {
      var locator = new Geolocator { DesiredAccuracy = 50 };
      locator.GetPositionAsync (timeout: 10000).ContinueWith (t => {
      var text = String.Format("Lat: {0}, Long: {0}", t.Result.Latitude, t.Result.Longitude);
-         InvokeOnMainThread(() => LabelLocation.Text = text);
+         InvokeOnMainThread(() => labelLocation.Text = text);
      });
 
 };
@@ -56,7 +59,7 @@ buttonLocation.TouchUpInside += (sender, e) => {
 
 * Add the following code to the `ViewDidLoad` method to make the application activate the camera and put the captured image in the image control when the button is pressed:
 
-```
+```C#
 buttonPicture.TouchUpInside += (sender, e) => {
     var camera = new MediaPicker ();
                 
@@ -81,3 +84,13 @@ buttonPicture.TouchUpInside += (sender, e) => {
 ```
 
 * Run the app test each button to see the features in action! Remember, the camera functionality will only work if you run the application on an actual device.
+
+### Walkthrough (Android)
+
+* Create a new Android Application called "xamMobileAndroid"
+
+* Add a Button with label "Find Location" and id `buttonLocation`
+
+* Add a Button next to it with label "Take picture" and id `buttonCamera`
+
+* Add an ImageView 

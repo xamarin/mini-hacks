@@ -30,13 +30,13 @@ Create a new project in Xamarin Studio and add the ZXing framework from the Comp
 
 * Add the following lines to the view controller source file, right under the existing `using` statements at the top of the file:
 
-```
+```C#
 using ZXing;
 ```
 
 * Add the following code to the `ViewDidLoad` method to make the application launch the ZXing scanner when the Scan button is pressed and display the captured value in the label when a QR code is scanned:
 
-```
+```C#
 buttonScan.TouchUpInside += (sender, e) => {
   var scanner = new ZXing.Mobile.MobileBarcodeScanner();
   scanner.Scan().ContinueWith(t => {
@@ -68,13 +68,13 @@ buttonScan.TouchUpInside += (sender, e) => {
 
 * Add the following lines to the MainActivity.cs source file, right under the existing `using` statements at the top of the file:
 
-```
+```C#
 using ZXing;
 ```
 
 * Add the following code to the `button.Click += delegate` method to make the application launch the ZXing scanner when the Scan button is pressed and display the captured value in the label when a QR code is scanned:
 
-```
+```C#
 button.Click += delegate
 {
 	var scanner = new ZXing.Mobile.MobileBarcodeScanner();
@@ -86,7 +86,7 @@ button.Click += delegate
 ```
 
 * Add the following line to the AndroidManifest.xml
-```
+```XML
 <uses-permission android:name="android.permission.CAMERA" />
 ````
 

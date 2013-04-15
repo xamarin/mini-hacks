@@ -14,7 +14,7 @@ https://code.google.com/apis/console/
 
 https://raw.github.com/xamarin/monodroid-samples/master/MapsAndLocationDemo_v2/README.md
 
-## Walkthrough (iOS Version - Component Store version) (Difficulty: easy)
+### Walkthrough (iOS Version - Component Store version) (Difficulty: easy)
 
 * Start a new iOS iPhone Storyboard Single-View Appplication project, name it GMapsiOS
 * Add Google Maps component by going to the Component Store
@@ -27,7 +27,7 @@ https://raw.github.com/xamarin/monodroid-samples/master/MapsAndLocationDemo_v2/R
 * In your `AppDelegate.cs` Add the following:
 
 ```
-using Google.Maps
+using Google.Maps;
 
 const string MapsApiKey = "[paste your API key here])"
 
@@ -78,6 +78,10 @@ public override void ViewWillDisappear (bool animated)
 * Add a UIButton to show your current location
 
 ## Walkthrough (v2 Android version) (Difficulty: advanced)
+
+### Requirements
+
+* Must deploy to device, Google Play Services is not supported in the emulator.
 
 **Setup Google API**
 
@@ -150,4 +154,4 @@ public override void ViewWillDisappear (bool animated)
 
 ```
 
-* 
+* Run it on a device with Google Play Services installed!

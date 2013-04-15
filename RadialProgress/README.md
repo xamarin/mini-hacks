@@ -24,7 +24,7 @@ Create a new project in Xamarin Studio and add the Radial Progress component fro
 
 * Add the following code to the `ViewDidLoad` method to make the application instantiate a radial progress code and add it to the view when launched:
 
-```
+```C#
 var progressView = new RadialProgressView {
      Center = new PointF (View.Center.X, View.Center.Y - 100)
 };
@@ -36,7 +36,7 @@ View.AddSubview (progressView);
 
 * Add the following code to the `ViewDidLoad` method to make the application increment the value of the progress control when the button is pressed:
 
-```
+```C#
 buttonAdd.TouchUpInside += (sender, e) => {
       if (progressView.IsDone)
 	      progressView.Reset();
@@ -61,7 +61,7 @@ buttonAdd.TouchUpInside += (sender, e) => {
 
 * Add the following code after the Button:
 
-```
+```AXML
 <radialprogress.RadialProgressView
 	android:id="@+id/progressView"
 	android:layout_width="fill_parent"
@@ -77,19 +77,19 @@ buttonAdd.TouchUpInside += (sender, e) => {
 
 * add a `using RadialProgress;` line immediately below the other using statements at the top of the file. (note: you may require to close and reopen the solution for references to update)
 
-```
+```C#
 using RadialProgress;
 ```
 
 * Add a reference to the RadialProgressView with the following code using FindViewById:
 
-```
+```C#
 var progressView = FindViewById<RadialProgressView> (Resource.Id.progressView);
 ```
 
 * Change the contents of `button.Click += delegate` to the following:
 
-```
+```C#
 if (progressView.IsDone)
 	progressView.Reset();
 else

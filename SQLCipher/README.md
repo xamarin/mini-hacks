@@ -19,14 +19,14 @@ To complete the challenge you must make a few changes to convert the application
 **Step 1.** Delete the SQLite.cs file from the SQLCipherAppiOS and SQLCipherAppAndroid projects, as sqlite-net will now be included automatically as part of the SQLCipher component. 
 
 **Step 2.** Open the MessageDbSqlite.cs class and change the GetConnection() method to call the SQLiteConnection constructor that includes the SQLCipher password, i.e. from:
-```
+```CSharp
 public SQLiteConnection GetConnection() 
 {
   return new SQLiteConnection(FilePath);
 }
 ```
 to
-```
+```CSharp
 public SQLiteConnection GetConnection() 
 {
   return new SQLiteConnection(FilePath,Password);
@@ -37,23 +37,24 @@ public SQLiteConnection GetConnection()
 ### Walkthrough 2 - Using ADO.NET with Mono.Data.Sqlite
 
 **Step 1.** For both projects, open Project Options, navigate to the Compiler settings and remove USE\_SQLITE\_NET from the _Define Symbols_ so it reads:
-```
+```CSharp
 DEBUG;
 ```
 
 **Step 2.** Open MessageDbAdo.cs 
 
 **Step 3.** Change Mono.Data.Sqlite to Mono.Data.Sqlcipher, i.e.:
-```
+```CSharp
 using Mono.Data.Sqlite;
 ```
 to 
-```
+```CSharp
 using Mono.Data.Sqlcipher
 ```
 
 **Step 4.** Change the GetConnection method to call SetPassword() on the SqliteConnection before Open(). i.e.  from:
-```
+
+```CSharp
 public SqliteConnection GetConnection() 
 {
   var connection = new SqliteConnection(String.Format("Data Source={0}", FilePath));
@@ -62,7 +63,7 @@ public SqliteConnection GetConnection()
 }
 ```
 to 
-```
+```CSharp
 public SqliteConnection GetConnection() 
 {
   var connection = new SqliteConnection(String.Format("Data Source={0}", FilePath));

@@ -4,26 +4,32 @@ We invite you to join the Evolve Mini-Hacks challenge: a fast, easy, and fun way
 
 Attendees at Xamarin Evolve 2013 can show their completed hacks to a Xamarin staffer in the Darwin Lounge to collect stickers. Evolve attendees who collect four stickers on their conference badge will receive a Xamarin Power Pack.
 
-Mini-hacks are designed to stimulate developers of all skill levels—each challenge comes with step-by-step instructions and a working sample to guide you if you get stuck. You can find all of the challenges, working samples, and step-by-step guides in this GitHub repository.
+Mini-hacks are designed to stimulate developers of all skill levels—each challenge comes with step-by-step instructions (and a working sample) to guide you if you get stuck. You can find all of the challenges, working samples, and step-by-step guides in this GitHub repository.
 
 To get started, click one of the mini-hacks below and attempt  to complete the challenge that is described in the included README file.
 
 ## Challenges
 
-* [Windows Azure](https://github.com/xamarin/mini-hacks/tree/master/WindowsAzure)
-* [Parse](https://github.com/xamarin/mini-hacks/tree/master/Parse)
+Sponsored:
+
+* [Windows Azure](https://github.com/xamarin/mini-hacks/tree/master/WindowsAzure#windows-azure-mobile-services)
+* [Parse](https://github.com/xamarin/mini-hacks/blob/master/Parse/README.md#parse)
 * [SQLCipher](https://github.com/xamarin/mini-hacks/tree/master/SQLCipher)
-* [ZXing](https://github.com/xamarin/mini-hacks/tree/master/QRScanner)
-* [Xamarin.Mobile](https://github.com/xamarin/mini-hacks/tree/master/XamarinMobile)
-* [Radial Progress UI](https://github.com/xamarin/mini-hacks/tree/master/RadialProgress)
-* [Google Maps](https://github.com/xamarin/GoogleMaps)
+
+Standard:
+
+* [Google Maps](https://github.com/xamarin/mini-hacks/tree/master/GoogleMaps#google-maps)
+* [Radial Progress UI](https://github.com/xamarin/mini-hacks/tree/master/XamarinMobile#xamarinmobile)
+* [Xamarin.Mobile](https://github.com/xamarin/mini-hacks/tree/master/XamarinMobile#xamarinmobile)
+* [ZXing](https://github.com/xamarin/mini-hacks/tree/master/QRScanner#zxing-qr-code-scanner)
 
 ## How to claim your stickers and prize!
+
 * Visit our Mini-Hacks booth next to the Darwin Lounge, a couple of staffers will be there to verify completion of your app, and give you a sticker for the hack.
-* You can also find the staffer in the [straw / cowboy] hat roaming the conference floor. 
-* Staffers will be in the Mini-Hack booth during all breaks. 
+
+* The Mini-Hacks booth will be staffed on Tuesday and Wednesday during all afternoon sessions. And an hour prior to dinner. 
 
 ## Help!
-* If you have any questions, or if a hack doesn’t work for you, email andrew+minihacks@xamarin.com 
+* If you have any questions, or if a hack doesn’t work for you ping @away168 or come to the mini-hacks booth.
 
 
