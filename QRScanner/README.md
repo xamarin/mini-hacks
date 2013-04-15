@@ -14,7 +14,7 @@ Create a new project in Xamarin Studio and add the ZXing framework from the Comp
 
 ### Walkthrough (iOS version)
 
-* In Xamarin Studio, Create a new single-view iOS project called `ZXingScanner`
+* In Xamarin Studio, Create a new single-view iOS Storyboard project called `ZXingScanner`
 
 * Using Xamarin Studio's built-in Component Store, add the free ZXing component to your project
 
