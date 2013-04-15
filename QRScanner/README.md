@@ -8,6 +8,10 @@ Create a new project in Xamarin Studio and add the ZXing framework from the Comp
 * Must deploy and test on device
 * Mono 3.0.9 or later (upgrade via Beta or Alpha channels)
 
+### Fun
+
+* (QRCode Generators)[https://www.google.com/search?q=qrcode+generators]
+
 ### Walkthrough (iOS version)
 
 * In Xamarin Studio, Create a new single-view iOS project called `ZXingScanner`
