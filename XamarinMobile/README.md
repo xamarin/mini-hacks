@@ -87,10 +87,4 @@ buttonPicture.TouchUpInside += (sender, e) => {
 
 ### Walkthrough (Android)
 
-* Create a new Android Application called "xamMobileAndroid"
-
-* Add a Button with label "Find Location" and id `buttonLocation`
-
-* Add a Button next to it with label "Take picture" and id `buttonCamera`
-
-* Add an ImageView 
+* To Be Completed.
