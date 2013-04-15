@@ -133,13 +133,13 @@ using MonoTouch.UIKit;
 	}
 ```
 
-* Finally, you need to wire up this new view controller by adding this line to your FinishedLaunching handler:
+* Finally, you need to wire up this new view controller by adding this line to the FinishedLaunching handler in your AppDelegate:
 
 ```CSharp
 window.RootViewController = new UINavigationController(new MiniHackViewController());
 ```
 
-*
+* Run the application and add some todo items
 
 * If you head back to the [Windows Azure Portal](manage.windowsazure.com), you'll see that items you add to the list are now stored in your SQL database.
 
