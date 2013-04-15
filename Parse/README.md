@@ -12,7 +12,7 @@ Create a new project in Xamarin Studio and add the Parse famework from the Compo
 
 * Sign up for a free [Parse](http://www.parse.com) account and create a new application named “ParseXamarin”.
 * In Xamarin Studio, open the start project for iOS or Android.
-* Using Xamarin Studio’s built-in Component Store, add the free Parse component to your project. (the starter project already includes a copy of the parse dll)
+* The starter project already includes a copy of the parse dll; otherwise, using Xamarin Studio’s built-in Component Store, add the free Parse component to your project.) 
 * Find your Application ID and Windows Key on your Parse application dashboard (select your application on [Parse](https://parse.com/apps), go to “Settings”, then open the “Application Keys” tab).
 	* If you’re building an **iOS** app, add this to your `AppDelegate.cs` file:
 	
