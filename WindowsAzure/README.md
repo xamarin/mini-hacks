@@ -96,29 +96,31 @@ using MonoTouch.UIKit;
 	public class MiniHackViewController: DialogViewController
 	{
 		IMobileServiceTable<TodoItem> table;
-
+		TaskScheduler scheduler;
+		
 		public MiniHackViewController() : base(UITableViewStyle.Grouped, null)
 		{
 			table = AppDelegate.MobileService.GetTable<TodoItem>();
+			scheduler = TaskScheduler.FromCurrentSynchronizationContext();
 		}
-
+		
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 			Refresh ();
 		}
-
+		
 		private void Refresh()
 		{
 			table.Where(ti => !ti.Complete).ToListAsync()
-				.ContinueWith(task => PopulateItems(task.Result), TaskScheduler.FromCurrentSynchronizationContext());
+				.ContinueWith(task => PopulateItems(task.Result), scheduler );
 		}
-
+		
 		private void PopulateItems(List<TodoItem> items)
 		{
 			var inputElement = new EntryElement("Todo", "Enter your todo item", string.Empty);
 			var todoItemElements = items.Select(todoItem => new StringElement(todoItem.Text)).ToList();
-				
+			
 			Root = new RootElement("Todos") {
 				new Section() {
 					inputElement,
