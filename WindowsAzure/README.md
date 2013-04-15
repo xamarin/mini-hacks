@@ -39,7 +39,9 @@ Also be sure to catch Paul's session--[Building Connected, Cross-Platform Mobile
 
 * On the dashboard, click 'Manage Keys' and copy your Application and Master Keys to a text file.
 
-* Fire up Xamarin Studio and using the built-in Component Store (Project --> Get More Components), add the free Azure Mobile Services component to your project. (If you aren't working on an app at the moment, we recommend grabbing the [Tasky](http://docs.xamarin.com/samples/Tasky) sample app from Xamarin for this challenge.)
+* Fire up Xamarin Studio and select the iOS --> Universal --> Empty project. 
+
+* Using the built-in Component Store (Project --> Get More Components), add the free Azure Mobile Services component to your project.
 
 * Copy over the following code into your AppDelegate.cs file to connect your Xamarin Studio project to the Mobile Service you created in the Windows Azure portal:
 
@@ -53,9 +55,13 @@ public static MobileServiceClient MobileService = new MobileServiceClient(
 );
 ```
 
-* Now that you've connected your project to Mobile Services, store data in the table you created earlier using the following code snippet:
+* Now that you've connected your project to Mobile Services, add a class for your todo items
+(Note: You will need to add a reference to System.Runtime.Serialization):
 
 ```CSharp
+using System.Runtime.Serialization;
+...
+
 public class TodoItem
 {
     public int Id { get; set; }
@@ -64,26 +70,55 @@ public class TodoItem
     [DataMember (Name = "complete")]
     public bool Complete { get; set; }
 }
-
-...
-
-this.table = MobileService.GetTable<TodoItem>();
-this.table.Where (ti => !ti.Complete).ToListAsync()
-    .ContinueWith (t => { this.items = t.Result; }, scheduler);
 ```
 
-* In iOS, add a Rounded Rect Button to the MainView.cs file and create an outlet for the UIbutton named 'btn.'
-
-* Add a handler to the button using the snippet below:
+Next you'll need to add a view controller to display and create todo items:
 
 ```CSharp
-btnAdd.TouchUpInside += (sender, e) => 
+	public class MiniHackViewController: DialogViewController
 	{
-		var todo = new TodoItem();
-		todo.Text = txtTask.Text; // hard code it or use a form.
-		todo.Complete = swComplete.On; // same
-		MobileService.GetTable<TodoItem>().InsertAsync(todo);
-	};
+		IMobileServiceTable<TodoItem> table;
+
+		public MiniHackViewController() : base(UITableViewStyle.Grouped, null)
+		{
+			table = AppDelegate.MobileService.GetTable<TodoItem>();
+		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			Refresh ();
+		}
+
+		private void Refresh()
+		{
+			table.Where(ti => !ti.Complete).ToListAsync()
+				.ContinueWith(task => PopulateItems(task.Result), TaskScheduler.FromCurrentSynchronizationContext());
+		}
+
+		private void PopulateItems(List<TodoItem> items)
+		{
+			var inputElement = new EntryElement("Todo", "Enter your todo item", string.Empty);
+			var todoItemElements = items.Select(todoItem => new StringElement(todoItem.Text)).ToList();
+				
+			Root = new RootElement("Todos") {
+				new Section() {
+					inputElement,
+					new StyledStringElement("Add", () => {
+						var item = new TodoItem { Text = inputElement.Value };
+						table.InsertAsync(item).ContinueWith(_ => Refresh());
+					}) { Alignment = UITextAlignment.Center } 
+				},
+				new Section("Todo Items") { todoItemElements }
+			};
+		}
+	}
+```
+
+Finally, you need to wire up this new view controller by adding this line to your FinishedLaunching handler:
+
+```CSharp
+window.RootViewController = new UINavigationController(new MiniHackViewController());
 ```
 
 * If you head back to the [Windows Azure Portal](manage.windowsazure.com), you'll see that items you add to the list are now stored in your SQL database.
