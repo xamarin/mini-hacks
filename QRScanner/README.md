@@ -82,7 +82,7 @@ using ZXing;
 ```C#
 button.Click += delegate
 {
-	var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+	var scanner = new ZXing.Mobile.MobileBarcodeScanner(this);
 	scanner.Scan().ContinueWith(t => {   
 		if (t.Result != null)
 			RunOnUiThread(()=> labelOutput.Text = t.Result.Text);
