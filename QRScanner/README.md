@@ -86,9 +86,11 @@ button.Click += delegate
 ```
 
 * Add the following line to the AndroidManifest.xml
-```XML
+
+```AXML
 <uses-permission android:name="android.permission.CAMERA" />
 ````
 
 * Run your application on a device! You can use this QR Code to make sure that it works.
+
 ![QR code](qrcode.png)
