@@ -48,8 +48,8 @@ using Microsoft.WindowsAzure.MobileServices;
 ...
 
 public static MobileServiceClient MobileService = new MobileServiceClient(
-"https://yourMobileServiceName.azure-mobile.net/", 
-"YOUR_APPLICATION_KEY"
+    "https://yourMobileServiceName.azure-mobile.net/", 
+    "YOUR_APPLICATION_KEY"
 );
 ```
 
@@ -147,9 +147,6 @@ function sendEmail(item) {
         }
     });
 }
-
-
-}
 ```
 
 
@@ -162,7 +159,7 @@ function sendEmail(item) {
 
 * Back in Xamarin Studio, add the following code to a view controller.  This code wires login up to an iOS action such as clicking a login button.
 
-```CSharp
+```C#
     partial void Login()
     {
         AppDelegate.MobileService.LoginAsync(this, MobileServiceAuthenticationProvider.Twitter).ContinueWith(t => 
@@ -183,30 +180,30 @@ function sendEmail(item) {
 
 * Once you have an Apple developer certificate, add the following to your AppDelegate.cs file.  The insert code will be able to use the AppDelegate.DeviceToken property and include that in the insert item so that the script can use it to send the push notification.
 
-```CSharp
+```C#
 public static string DeviceToken { get; privateset; }
  
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
-	{
-		application.RegisterForRemoteNotificationTypes(UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound);
-                        returntrue;
-     }
+{
+    application.RegisterForRemoteNotificationTypes(UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound);
+    return true;
+}
                
 public override void RegisteredForRemoteNotifications (UIApplication application, NSData deviceToken)
-	{
-                        Console.WriteLine(deviceToken.Description);
-                        DeviceToken = deviceToken.Description.Replace("<","").Replace(">","");
-    }
+{
+    Console.WriteLine(deviceToken.Description);
+    DeviceToken = deviceToken.Description.Replace("<","").Replace(">","");
+}
                
 public override void FailedToRegisterForRemoteNotifications (UIApplication application, NSError error)
-	{
-	Console.WriteLine(error);
-	}
+{
+    Console.WriteLine(error);
+}
                
 public override void ReceivedRemoteNotification (UIApplication application, NSDictionary userInfo)
-	{
-	Console.WriteLine(userInfo);
-	}
+{
+    Console.WriteLine(userInfo);
+}
  
 ```
 
