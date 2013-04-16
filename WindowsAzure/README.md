@@ -220,12 +220,13 @@ function sendEmail(item) {
 
 * To get started with push notifications, head to the 'PUSH' tab and upload your Apple Developer Certificate. (More details on getting an Apple Developer Certificate can be found [here](http://www.windowsazure.com/en-us/develop/mobile/tutorials/get-started-with-push-ios/).)
 
-* Once you have an Apple developer certificate, you must update your project settings to use the provising profile and identifier you created. Double click your project in Xamarin Studio and go to the iOS Application section and enter your identifier. Then go to the iOS Bundle Signing section and select your provisioning profile
+* Note that push notifications are not supported by the iOS simulator so you must deploy the application to a device.
 
+* Once you have an Apple developer certificate, you must update your project settings to use the provising profile and identifier you created. Double click your project in Xamarin Studio and go to the iOS Application section and enter your identifier. Then go to the iOS Bundle Signing section and select your provisioning profile.
 
-* Add the following to your AppDelegate.cs file.  The insert code will be able to use the AppDelegate.DeviceToken property and include that in the insert item so that the script can use it to send the push notification.
+* Add the following to your AppDelegate.cs file. 
 
-```C#
+```CSharp
 public static string DeviceToken { get; privateset; }
  
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -252,6 +253,15 @@ public override void ReceivedRemoteNotification (UIApplication application, NSDi
  
 ```
 
+* Update your TodoItem class with an additional property to store the device token:
+
+```CSharp
+[DataMember(Name="deviceToken")]
+public string DeviceToken { get; set; }
+```
+
+* Update your code that creates TodoItem instances to set the device token using `AppDelegate.DeviceToken`
+
 * Head back to the 'Todo Item' table you created earlier under the 'DATA' tab
 
 * Hit 'SCRIPT' and replace the existing function under 'Insert' with the below in order to send a push notification every time a new record is added to the table.  Don't forget to hit save!
@@ -272,6 +282,7 @@ function insert(item, user, request) {
 }
 ```
 
+* Run the app and save an item. Close the app and you should see a toast. Congratulations, you've completed the Azure mini hack!
 
 
 
