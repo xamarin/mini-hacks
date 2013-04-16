@@ -12,7 +12,7 @@ To complete the challenge you must make a few changes to convert the application
 
 **Step 1.** Download the Trial version of SQLCipher from the Component Store at [https://components.xamarin.com/view/sqlcipher-for-xamarin/](https://components.xamarin.com/view/sqlcipher-for-xamarin/)
 
-**Step 2.** Unzip the trial package and add the Mono.Data.Sqlcipher assemblies from lib/ios and lib/android as references under the respective SQLCipherApp iOS and Android projects.
+**Step 2.** Unzip the trial package and **add the Mono.Data.Sqlcipher assemblies** from lib/ios and lib/android as references under the respective SQLCipherApp iOS and Android projects.
 
 ### Walkthrough 1 - Using sqlite-net
 
