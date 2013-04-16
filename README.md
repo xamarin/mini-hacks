@@ -19,7 +19,7 @@ Sponsored:
 Standard:
 
 * [Google Maps](https://github.com/xamarin/mini-hacks/tree/master/GoogleMaps#google-maps)
-* [Radial Progress UI](https://github.com/xamarin/mini-hacks/tree/master/XamarinMobile#xamarinmobile)
+* [Radial Progress UI](https://github.com/xamarin/mini-hacks/tree/master/RadialProgress#hack-radial-progress)
 * [Xamarin.Mobile](https://github.com/xamarin/mini-hacks/tree/master/XamarinMobile#xamarinmobile)
 * [ZXing](https://github.com/xamarin/mini-hacks/tree/master/QRScanner#zxing-qr-code-scanner)
 
