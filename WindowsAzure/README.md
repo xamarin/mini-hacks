@@ -119,7 +119,7 @@ using MonoTouch.UIKit;
 		private void PopulateItems(List<TodoItem> items)
 		{
 			var inputElement = new EntryElement("Todo", "Enter your todo item", string.Empty);
-			var todoItemElements = items.Select(todoItem => new StringElement(todoItem.Text)).ToList();
+			var todoItemElements = items.Select(todoItem => new StringElement(todoItem.Text)).Cast<Element>().ToList();
 			
 			Root = new RootElement("Todos") {
 				new Section() {
@@ -129,7 +129,7 @@ using MonoTouch.UIKit;
 						table.InsertAsync(item).ContinueWith(_ => Refresh());
 					}) { Alignment = UITextAlignment.Center } 
 				},
-				new Section("Todo Items") { todoItemElements }
+				new Section("Todo Items") { Elements = todoItemElements }
 			};
 		}
 	}
