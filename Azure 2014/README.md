@@ -157,6 +157,9 @@ For the bonus challenge, change the app to one that works even when there is no 
 
             await App.MobileService.SyncContext.InitializeAsync (store);
 
+ - *note: make sure `await Refresh()` comes AFTER `InitializeAsync()` or else bad things will happen.*
+
+
 * Change the declaration of `todoTable` to the following:
 
         private IMobileServiceSyncTable<TodoItem> syncTable;
