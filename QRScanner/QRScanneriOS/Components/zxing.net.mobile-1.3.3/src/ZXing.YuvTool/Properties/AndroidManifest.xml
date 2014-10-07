@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.zxing.monoandroid.yuvtool" android:versionCode="1" android:versionName="1">
-	<uses-sdk android:targetSdkVersion="12" />
-	<application android:label="Yuv Tool"></application>
-	<uses-permission android:name="android.permission.CAMERA" />
-	<uses-permission android:name="android.permission.VIBRATE" />
-	<uses-permission android:name="android.permission.FLASHLIGHT" />
-</manifest>

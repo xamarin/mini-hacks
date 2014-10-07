@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<string name="app_name">SQLCipher</string>
-	<string name="hintEmail">Email</string>
-	<string name="hintPassword">Password (optional)</string>
-	<string name="hintMessage">Message</string>
-	<string name="buttonSave">Save</string>
-	<string name="buttonSend">Send</string>
-</resources>
