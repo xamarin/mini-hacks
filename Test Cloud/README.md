@@ -167,11 +167,7 @@ following:
             [SetUp]
             public void SetUp()
             {
-                if (!TestEnvironment.IsTestCloud)
-                {
-                    // We have to authorized UITest in order to run tests locally.
                     _app = ConfigureApp.iOS.AppBundle(PathToIPA).ApiKey("YOUR_API_KEY_HERE").StartApp();
-                }
             }
     
             [Test]
