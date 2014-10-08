@@ -21,7 +21,7 @@ namespace XamarinInsights.Android
 			base.OnCreate (bundle);
 			if (string.IsNullOrEmpty (App.InsightsApiKey))
 				throw new Exception ("A Xamarin Insights Api key is required");
-			Xamarin.InsightsPlatform.Initialize (App.InsightsApiKey,this);
+			Xamarin.Insights.Initialize (App.InsightsApiKey,this);
 			Xamarin.Forms.Forms.Init (this, bundle);
 
 			App.RunOnMainThread = (a) => this.RunOnUiThread (a);
