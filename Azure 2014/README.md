@@ -6,8 +6,6 @@ In this challenge, you will use Azure Mobile Services and Xamarin.iOS to build a
 
 Login to the Azure portal and create a new Mobile Service and SQL database.  Add the Azure Mobile Services NuGet package to your Xamarin Forms project.    
 
-<b>Prize?</b> The official Azure Mini-Hack badge.
-
 The walkthrough below should help you with the challenge, but you can also get in touch with @lindydonna or @paulbatum with questions--both of whom are on site at Evolve and happy to help!
 
 ### Challenge Walkthrough
@@ -130,8 +128,6 @@ The walkthrough below should help you with the challenge, but you can also get i
 * Run either the iOS or Android application and add some todo items
 
 * If you head back to the [Windows Azure Portal](manage.windowsazure.com), you'll see that items you add to the list are now stored in your SQL database.
-
-* Get fired up that you're up and running with Mobile Services and go get verified with the Microsoft team to secure your badge.
 
 #####Bonus Challenge #1 Walkthrough
 
