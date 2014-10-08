@@ -19,3 +19,6 @@ Standard:
 * [Xamarin.Forms](https://github.com/xamarin/mini-hacks/tree/master/Xamarin.Forms)
 * [Google Cardboard](https://github.com/xamarin/mini-hacks/tree/master/CardboardMiniHack)
 * [iBeacon](https://github.com/xamarin/mini-hacks/tree/master/iBeacon)
+* [Xamarin Insights](https://github.com/xamarin/mini-hacks/tree/master/XamarinInsights)
+* [Xamarin Android Player](https://github.com/xamarin/mini-hacks/tree/master/XamarinAndroidPlayer)
+* [Test Cloud](https://github.com/xamarin/mini-hacks/tree/master/Test%20Cloud)
