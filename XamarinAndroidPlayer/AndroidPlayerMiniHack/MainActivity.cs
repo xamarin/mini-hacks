@@ -1,0 +1,162 @@
+﻿using System;
+
+using Android.App;
+using Android.Content;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+using Android.Support.V7.Widget;
+using System.Collections.Generic;
+
+namespace AndroidPlayerMiniHack
+{
+	[Activity (Label = "Xamarin Android Player", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light")]
+	public class MainActivity : Activity
+	{
+		RecyclerView recyclerView;
+		RecyclerView.Adapter adapter;
+		RecyclerView.LayoutManager layoutManager;
+
+		protected override void OnCreate (Bundle bundle)
+		{
+			base.OnCreate (bundle);
+
+			// Set our view from the "main" layout resource
+			SetContentView (Resource.Layout.main);
+
+			var refreshbattery = FindViewById<Button> (Resource.Id.refresh_battery);
+			var batterystatus = FindViewById<TextView> (Resource.Id.battery_status);
+			var batterylevel = FindViewById<TextView> (Resource.Id.battery_level);
+
+			refreshbattery.Click += (sender, e) => {
+				var filter  = new IntentFilter(Intent.ActionBatteryChanged);
+				var battery = RegisterReceiver(null, filter);
+				int level   = battery.GetIntExtra(BatteryManager.ExtraLevel, -1);
+				int scale   = battery.GetIntExtra(BatteryManager.ExtraScale, -1);
+
+				batterylevel.Text = string.Format("Current Charge: {0}%", Math.Floor (level * 100D / scale));
+
+
+				// Are we charging / charged?
+				int status = battery.GetIntExtra(BatteryManager.ExtraStatus, -1);
+				var isCharging = status == (int)BatteryStatus.Charging || status == (int)BatteryStatus.Full;
+
+				batterystatus.Text = "Status: " + (isCharging ? "charging" : "discharging");
+			};
+				
+			recyclerView = FindViewById<RecyclerView> (Resource.Id.recycler_view);
+			recyclerView.HasFixedSize = true;
+
+
+			layoutManager = new LinearLayoutManager (this);
+			recyclerView.SetLayoutManager (layoutManager);
+
+			var items = new List<RecyclerItem> (100);
+			for(int i = 0; i < 100; i++)
+				items.Add(new RecyclerItem{Title = "Item: " + i});
+
+			adapter = new RecyclerAdapter (items);
+			recyclerView.SetAdapter (adapter);
+		}
+
+
+		public class RecyclerItem : Java.Lang.Object
+		{
+			static int[] Ids = new int[]{Resource.Drawable.caterpiller, Resource.Drawable.flying_in_the_light_large, Resource.Drawable.jelly_fish_2, Resource.Drawable.lone_pine_sunset, Resource.Drawable.look_me_in_the_eye, Resource.Drawable.over_there, Resource.Drawable.rainbow, Resource.Drawable.rainbow, Resource.Drawable.sample1, Resource.Drawable.sample2};
+			static int nextId;
+			public RecyclerItem()
+			{
+				Image = Ids[nextId];
+				nextId++;
+				if (nextId >= Ids.Length)
+					nextId = 0;
+			}
+			public string Title {get;set;}
+			public int Image {get;set;}
+		}
+
+		public class ViewHolder : RecyclerView.ViewHolder
+		{
+			public TextView Text {get;set;}
+			public ImageView Image {get;set;}
+
+			public ViewHolder(View view) :
+			base(view)
+			{
+				Text = view.FindViewById<TextView> (Resource.Id.textView);
+				Image = view.FindViewById<ImageView> (Resource.Id.imageView);
+			}
+		}
+
+		public class RecyclerAdapter : RecyclerView.Adapter, View.IOnClickListener
+		{
+
+			public List<RecyclerItem> Items { get; set; }
+			/// <summary>
+			/// Generice constructor but you would want ot base this on your data.
+			/// </summary>
+			/// <param name="items">Items.</param>
+			public RecyclerAdapter(List<RecyclerItem> items)
+			{
+				this.Items = items;
+			}
+
+			/// <summary>
+			/// Create a new view which is invoked by the layout manager
+			/// </summary>
+			/// <param name="parent">Parent.</param>
+			/// <param name="viewType">View type.</param>
+			public override RecyclerView.ViewHolder OnCreateViewHolder (ViewGroup parent, int viewType)
+			{
+				var view = LayoutInflater.From (parent.Context).Inflate (Resource.Layout.recycleritem_card, null);
+				view.SetOnClickListener (this);
+				return new ViewHolder (view);
+			}
+
+			/// <summary>
+			/// Replaces the content of the view. Invoked by the layout manager
+			/// </summary>
+			/// <param name="holder">Holder.</param>
+			/// <param name="position">Position.</param>
+			public override void OnBindViewHolder (RecyclerView.ViewHolder holder, int position)
+			{
+				var holder2 = holder as ViewHolder;
+				holder2.Text.Text = Items [position].Title;
+				holder2.Image.SetImageResource (Items [position].Image);
+				holder2.ItemView.Tag = Items [position];
+			}
+
+			public override int ItemCount {
+				get {
+					return Items.Count;
+				}
+			}
+
+			public void Add(RecyclerItem item) {
+				var position = Items.Count;
+				Items.Insert(position, item);
+				NotifyItemInserted(position);
+			}
+
+			public void Remove(int position) {
+				if (position < 0)
+					return;
+
+				Items.RemoveAt(position);
+				NotifyItemRemoved(position);
+			}
+
+			public Action<View, RecyclerItem> OnItemClick { get; set; }
+			public void OnClick (View v)
+			{
+				if (OnItemClick == null)
+					return;
+
+				OnItemClick (v, (RecyclerItem)v.Tag);
+			}
+
+		}
+	}
+}
+
+
