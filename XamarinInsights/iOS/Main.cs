@@ -16,7 +16,7 @@ namespace XamarinInsights.iOS
 		{
 			if (string.IsNullOrEmpty (App.InsightsApiKey))
 				throw new Exception ("A Xamarin Insights Api key is required");
-			Xamarin.InsightsPlatform.Initialize (App.InsightsApiKey);
+			Xamarin.Insights.Initialize (App.InsightsApiKey);
 			// if you want to use a different Application Delegate class from "AppDelegate"
 			// you can specify it here.
 			UIApplication.Main (args, null, "AppDelegate");
