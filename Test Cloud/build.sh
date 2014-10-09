@@ -22,4 +22,4 @@ rm -rf CreditCardValidation.UITest/obj
 
 
 ### This line submits the application and tests to Test Cloud.
-mono ./packages/Xamarin.UITest.0.6.2/tools/test-cloud.exe submit $IPA $TESTCLOUD_API_KEY --devices $IOS_DEVICE_ID --assembly-dir $ASSEMBLY_DIR
+mono ./packages/Xamarin.UITest.0.6.5/tools/test-cloud.exe submit $IPA $TESTCLOUD_API_KEY --devices $IOS_DEVICE_ID --assembly-dir $ASSEMBLY_DIR
