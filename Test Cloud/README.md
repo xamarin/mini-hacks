@@ -250,11 +250,11 @@ Next using the API key and device ID from the start of this walkthrough, you can
 
 
     ### This line submits the application and tests to Test Cloud.
-    mono ./packages/Xamarin.UITest.0.6.2/tools/test-cloud.exe submit $IPA $TESTCLOUD_API_KEY --devices $IOS_DEVICE_ID --assembly-dir $ASSEMBLY_DIR
+    mono ./packages/Xamarin.UITest.0.6.5/tools/test-cloud.exe submit $IPA $TESTCLOUD_API_KEY --devices $IOS_DEVICE_ID --assembly-dir $ASSEMBLY_DIR
 
 If you are using Windows and Visual Studio you can run from the test cloud folder in a command prompt:
 
-    .\packages\Xamarin.UITest.0.6.1\tools\test-cloud.exe submit .\CreditCardValidation.iOS\bin\iPhone\Debug\CreditCardvalidationiOS-1.0.ipa --devices --series "master" --locale "en_US" --assembly-dir .\CreditCardValidation.UITests\bin\Debug
+    .\packages\Xamarin.UITest.0.6.5\tools\test-cloud.exe submit .\CreditCardValidation.iOS\bin\iPhone\Debug\CreditCardvalidationiOS-1.0.ipa --devices --series "master" --locale "en_US" --assembly-dir .\CreditCardValidation.UITests\bin\Debug
 
 Run the bash script and patiently wait while the application is uploaded to Test Cloud and enqueued for testing. You should see output similar to the following:
 
