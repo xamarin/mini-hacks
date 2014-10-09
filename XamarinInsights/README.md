@@ -10,7 +10,7 @@ Test out Xamarin.Insights by playing a game
 
 * Add Xamarin.Insights Package via Nuget
 
-* Create a new Application at https://houston.xamarin.com/
+* Create a new Application at https://insights.xamarin.com/
 
 * Copy the API Key
 
@@ -24,6 +24,6 @@ Test out Xamarin.Insights by playing a game
 
 * See how long you can last. Eventually the game will blow up!
 
-* Check https://houston.xamarin.com/ for crash data
+* Check https://insights.xamarin.com/ for crash data
 
-* Check out the user data at https://houston.xamarin.com/
+* Check out the user data at https://insights.xamarin.com/
