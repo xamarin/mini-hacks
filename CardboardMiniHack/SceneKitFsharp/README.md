@@ -50,18 +50,11 @@ And add another camera node to the scene — this time with a slightly different
 
         let targetNode = new SCNNode ()
 
-Point the cameras at the same thing. Change this code:
+We don't want you to have to go cross-eyed, so comment out this code:
 
         //Point the camera
         let lc = SCNLookAtConstraint.Create (targetNode);
         leftCameraNode.Constraints <- [lc].ToArray().Cast<SCNConstraint>().ToArray()
-
-into this code:
-
-        //Point the cameras
-        let lc = SCNLookAtConstraint.Create (targetNode);
-        leftCameraNode.Constraints <- [lc].ToArray().Cast<SCNConstraint>().ToArray()
-        rightCameraNode.Constraints <- leftCameraNode.Constraints
 
 OK, now we have to use this right-hand camera we’ve created in our right-hand view. Right before we write `this.View <- outer` add these few lines of code:
 
@@ -71,7 +64,7 @@ OK, now we have to use this right-hand camera we’ve created in our right-hand 
        
         this.View <- outer
 
-To review what this is: our `ss` list contains two `SCNView`s: the one rendering on the left of the screen, and the one rendering on the right. We set their `PointOfView`s to the `SCNNode`s built by the `buildCamera` function, and we had called that function to place these camera nodes in two slightly different positions, but looking at the same point, just as eyes do.
+To review what this is: our `ss` list contains two `SCNView`s: the one rendering on the left of the screen, and the one rendering on the right. We set their `PointOfView`s to the `SCNNode`s built by the `buildCamera` function, and we had called that function to place these camera nodes in two slightly different positions, but pointing in the same direction, just as eyes do.
 
 Run the app! Even better, deploy it to an iPhone or iPod and view the 3D effect in Cardboard!
 
