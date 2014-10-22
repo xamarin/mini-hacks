@@ -21,7 +21,7 @@ The application is a simple credit card validator with one rule:
 
 Here are some screenshots of the application running in iOS:
 
-![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image10.png?raw=true)
+![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image10.png?raw=true)
 
 There is a bash script included, `build.sh` that can be used to compile both projects from the command line. The `images` folder holds the bitmaps necessary for this README.
 
@@ -47,15 +47,15 @@ In order for Xamarin.UITests to interact with the application, the Xamarin Test 
 
 1. Right click on the **Components** folder of the CreditCardValidation.iOS project, and select **Get More Components**:
 
-	![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image01.png?raw=true)
+	![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image01.png?raw=true)
 
 2. Search the Component Store using the keyword **Xamarin Test Cloud Agent**. The Test Cloud Agent component should show up:
 
-	![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image02.png?raw=true)
+	![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image02.png?raw=true)
 
 3.  Double click on the component and add it to the project.
 
-	![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image03.png?raw=true)
+	![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image03.png?raw=true)
 
 4. Finally, edit `AppDelegate.cs` so that it resembles the following code:
 
@@ -87,26 +87,26 @@ Now that the Xamarin Test Cloud Agent has been added to Xamarin.iOS project, we 
 
 1. Right click on the solution, and select **Add > New Project**
 
-    ![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image04.png?raw=true)
+    ![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image04.png?raw=true)
 
 2. From the **New Project** dialog select the **NUnit Library Project**:
 
-    ![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image05.png?raw=true)
+    ![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image05.png?raw=true)
 
 3. Name the project **CreditCardValidation.UITests** and click OK. The Solution Pad should resemble the following screenshot:
 
-    ![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image06.png?raw=true) 
+    ![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image06.png?raw=true) 
 
 4. Next it is necessary to add the Xamarin.UITest NuGet package. Right click on the CreditCardValidation.UITests project, and select **Add > Add Packages...**:
 
-    ![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image07.png)
+    ![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image07.png)
 
 5. Search NuGet for **UITest**, select the **Xamarin.UITest** package, and add it to the project:
 
-    ![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image08.png?raw=true) 
+    ![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image08.png?raw=true) 
     Once the package has been added, the Solution Pad should resemble the following screenshot:
 
-    ![](https://github.com/xamarin/evolve-2014-mini-hacks/blob/master/Test%20Cloud/images/image09.png?raw=true)
+    ![](https://github.com/xamarin/mini-hacks/blob/master/Test%20Cloud/images/image09.png?raw=true)
 
 At this point we are ready to start adding the tests to CreditCardValidation.UITests.
 
@@ -304,4 +304,4 @@ Once the test run is complete, check out the test report in your browser and see
 
 At this point, now that you've got tests written for iOS, why not try and write your own tests for the Xamarin.Android application and submit them to Xamarin Test Cloud?
 
-If for some reason you are stuck, you can find a completed version of this lab in the [testcloud_minihack_finished](https://github.com/xamarin/evolve-2014-mini-hacks/tree/testcloud_minihack_finished/Test%20Cloud) branch on Github. All you have to do is update the TestFixture with your Test Cloud API Key.
+If for some reason you are stuck, you can find a completed version of this lab in the [testcloud_minihack_finished](https://github.com/xamarin/mini-hacks/tree/testcloud_minihack_finished/Test%20Cloud) branch on Github. All you have to do is update the TestFixture with your Test Cloud API Key.
