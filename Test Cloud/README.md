@@ -304,4 +304,4 @@ Once the test run is complete, check out the test report in your browser and see
 
 At this point, now that you've got tests written for iOS, why not try and write your own tests for the Xamarin.Android application and submit them to Xamarin Test Cloud?
 
-If for some reason you are stuck, you can find a completed version of this lab in the [testcloud_minihack_finished](https://github.com/xamarin/mini-hacks/tree/testcloud_minihack_finished/Test%20Cloud) branch on Github. All you have to do is update the TestFixture with your Test Cloud API Key.
+If for some reason you are stuck, you can find a complete version of UITest over at  [mobile_samples/TestCloud/CreditCardValidation/CreditCardValidation-](https://github.com/xamarin/mobile-samples/tree/master/TestCloud/CreditCardValidation/CreditCardValidation-UITest) Github. All you have to do is update the TestFixture with your Test Cloud API Key.
