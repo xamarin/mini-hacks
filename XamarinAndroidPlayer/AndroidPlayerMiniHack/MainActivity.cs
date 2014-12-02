@@ -36,12 +36,26 @@ namespace AndroidPlayerMiniHack
 
 				batterylevel.Text = string.Format("Current Charge: {0}%", Math.Floor (level * 100D / scale));
 
-
-				// Are we charging / charged?
+				// Are we charging / charged? works on phones, not emulators must check how.
 				int status = battery.GetIntExtra(BatteryManager.ExtraStatus, -1);
 				var isCharging = status == (int)BatteryStatus.Charging || status == (int)BatteryStatus.Full;
 
-				batterystatus.Text = "Status: " + (isCharging ? "charging" : "discharging");
+					// How are we charging?
+				var chargePlug = battery.GetIntExtra(BatteryManager.ExtraPlugged, -1);
+				var usbCharge = chargePlug == (int)BatteryPlugged.Usb;
+				var acCharge = chargePlug == (int)BatteryPlugged.Ac;
+				var wirelessCharge = chargePlug == (int)BatteryPlugged.Wireless;
+
+				isCharging = (usbCharge || acCharge || wirelessCharge);
+				if(!isCharging){
+					batterystatus.Text = "Status: discharging";
+				} else if(usbCharge){
+					batterystatus.Text = "Status: charging via usb";
+				} else if(acCharge){
+					batterystatus.Text = "Status: charging via ac";
+				} else if(wirelessCharge){
+					batterystatus.Text = "Status: charging via wireless";
+				}
 			};
 				
 			recyclerView = FindViewById<RecyclerView> (Resource.Id.recycler_view);
