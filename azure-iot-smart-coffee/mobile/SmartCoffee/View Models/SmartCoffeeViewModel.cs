@@ -47,7 +47,7 @@ namespace SmartCoffee
 			{
 				ButtonText = isCoffeeBrewing ? "Start Brewing" : "Stop Brewing";
 
-				// TODO #4: Send a message to Azure IoT Hub.
+				// TODO #5: Send a message to Azure IoT Hub.
 
 				isCoffeeBrewing = !isCoffeeBrewing;
 			}
