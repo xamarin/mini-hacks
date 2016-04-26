@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">XFit</string>
+
+	<string name="stepCountCheckbox">Display step count</string>
+</resources>

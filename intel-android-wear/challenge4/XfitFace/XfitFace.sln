@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wearable", "Wearable\Wearable.csproj", "{B75D0F88-C949-4CE9-B79B-D0468FF80A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile", "Mobile\Mobile.csproj", "{7A467E26-1ECD-4576-8B7A-1AFFBAAE228E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B75D0F88-C949-4CE9-B79B-D0468FF80A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75D0F88-C949-4CE9-B79B-D0468FF80A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75D0F88-C949-4CE9-B79B-D0468FF80A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75D0F88-C949-4CE9-B79B-D0468FF80A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A467E26-1ECD-4576-8B7A-1AFFBAAE228E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A467E26-1ECD-4576-8B7A-1AFFBAAE228E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A467E26-1ECD-4576-8B7A-1AFFBAAE228E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A467E26-1ECD-4576-8B7A-1AFFBAAE228E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

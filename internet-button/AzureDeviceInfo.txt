@@ -1,0 +1,9 @@
+Id,PrimaryKey,SecondaryKey,ConnectionString,ConnectionState,LastActivityTime,LastConnectionStateUpdatedTime,LastStateUpdatedTime,MessageCount,State,SuspensionReason
+
+deviceeaa589217f034e06990ca83d92af3583,
+Ee21Q4xWy+M0XXfq2PPUW1Vd1eY0u7JQ4ijQcC1Q8QM=,+Wlactck1rpkryXRjLLYyoqldPdKNwPzE1Gpz0ploso=,
+
+HostName=InternetButtonHub.azure-devices.net;DeviceId=deviceeaa589217f034e06990ca83d92af3583;SharedAccessKey=Ee21Q4xWy+M0XXfq2PPUW1Vd1eY0u7JQ4ijQcC1Q8QM=;GatewayHostName=ssl://InternetButtonHub.azure-devices.net:8883
+
+,Disconnected,1/1/0001 12:00:00 AM,1/1/0001 12:00:00 AM,1/1/0001 12:00:00 AM,0,Enabled,
+,,,,,,,,,,

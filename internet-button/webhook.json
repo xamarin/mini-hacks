@@ -1,0 +1,31 @@
+{
+
+	"event": "SimonSays",
+
+	"url": "https://InternetButton-ns.servicebus.windows.net/internetbuttonhub/messages",
+
+	"requestType": "POST",
+
+	"json": {
+
+		"gameid": "{{g}}",
+
+		"activity": "{{a}}",
+
+		"value": "{{v}}",
+
+		"timecreated": "{{SPARK_PUBLISHED_AT}}",
+
+		 "guid": "{{SPARK_CORE_ID}}"
+	},
+
+	"azure_sas_token": {
+
+		"key_name": "D1",
+
+		"key": "SWxP6/1JPi4PjEX1lseZ4dHDC8CUmTpOeWIlfYL2PX8="
+
+	},
+
+	"mydevices": true
+}

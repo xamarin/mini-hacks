@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:SmartCoffee;"
+		x:Class="SmartCoffee.SmartCoffeePage"
+		BackgroundImage="Background.png">
+	<ContentPage.Content>
+		<Grid Padding="40,90,40,90">
+			<Frame Grid.Row="0" OutlineColor="Transparent" HasShadow="True" Grid.Column="0" BackgroundColor="#FFFFFF">
+				<StackLayout Spacing="0">
+					<StackLayout Padding="0,0,0,0" Spacing="20" VerticalOptions="StartAndExpand">
+						<Image Source="CoffeeFilter" />
+						<StackLayout HorizontalOptions="Center">
+							<Label FontFamily="SanFranciscoDisplay-Regular" FontSize="24" Text="SmartCoffee" />
+						</StackLayout>
+
+						<Label FontFamily="SanFranciscoText-Light" FontSize="13" Text="Brew perfect coffee from anywhere with the touch of a button. SmartCoffee uses Azure IoT Hub and Xamarin to remotely start and stop your coffee maker from anywhere, regardless of location." />
+					</StackLayout>			
+
+					<StackLayout VerticalOptions="End">
+							<Button FontFamily="SanFranciscoText-Light " BackgroundColor="#6b36d1" TextColor="White" BorderRadius="5" Text="{Binding ButtonText}" Command="{Binding BrewCoffeeCommand}" />
+					</StackLayout>
+				</StackLayout>
+			</Frame>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

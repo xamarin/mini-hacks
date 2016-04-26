@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{19EF261E-3009-4A6A-9D02-8382E5B6B85C}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Amqp.Lite</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Accepted.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\AmqpSequence.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\AmqpValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\ApplicationProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Attach.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Begin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Close.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Codec.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\DeliveryAnnotations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\DeliveryState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Detach.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Dispose.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\End.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Error.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Flow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Footer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Frame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Header.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\MessageAnnotations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Modified.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Open.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Outcome.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\ProtocolHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Reader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Received.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\ReceiverSettleMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Rejected.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Released.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\SenderSettleMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Source.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Target.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framing\Transfer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\AttachContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\ConnectionListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\ContainerHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\Context.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\ContextState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\DispositionContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\FlowContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\IAuthenticated.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\IContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\ILinkProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\IMessageProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\IRequestProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\LinkCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\LinkEndpoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\ListenerConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\ListenerLink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\ListenerSession.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\MessageContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\RequestContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\SaslMechanism.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\SaslPlainMechanism.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Listener\X509Identity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\AmqpSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\AsyncPump.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\BufferManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\ConnectionFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\ConnectionFactoryBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Fx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\IAsyncTransport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\IBufferManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\List.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\RefCountedByteBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\ResourceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\SocketExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\SRAmqp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>..\..\..\..\..\Downloads\Buzzeroid-master\Amqp.Lite.Android\Net\SRAmqp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Net\TaskExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\TcpSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\TcpTransport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\TypeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\WebSocketTransport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\WrappedByteBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslChallenge.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslExternalProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslInit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslMechanisms.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslOutcome.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslPlainProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sasl\SaslResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\Controller.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\Coordinator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\Declare.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\Declared.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\Discharge.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\TransactionalState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\TxnCapabilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\Described.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\DescribedList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\DescribedMap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\DescribedValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\Descriptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\Encoder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\ErrorCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\Fields.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\FixedWidth.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\FormatCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\RestrictedDescribed.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\Symbol.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Address.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AmqpBitConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AmqpException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AmqpObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ByteBuffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Connection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Delivery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ITransport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Link.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LinkedList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Message.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReceiverLink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SenderLink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SequenceNumber.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Session.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SRAmqp.Designer.cs">
+      <DependentUpon>SRAmqp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Trace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Framing\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Listener\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Net\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Sasl\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Serialization\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Transactions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SRAmqp.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SRAmqp.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

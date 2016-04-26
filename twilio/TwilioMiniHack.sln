@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilioMiniHack.Droid", "TwilioMiniHack.Droid\TwilioMiniHack.Droid.csproj", "{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilioMiniHack.iOS", "TwilioMiniHack.iOS\TwilioMiniHack.iOS.csproj", "{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Release|iPhone.Build.0 = Release|Any CPU
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{32743B0D-5EBB-4BDF-B607-728DA4E6AB0C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Debug|iPhone.Build.0 = Debug|iPhone
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Release|iPhone.ActiveCfg = Release|iPhone
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Release|iPhone.Build.0 = Release|iPhone
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{BFBEC3EA-CD2C-4E51-B697-298D82F5143F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+EndGlobal

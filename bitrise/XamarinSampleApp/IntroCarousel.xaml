@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CarouselPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="XamarinSampleApp.IntroCarousel">
+
+    <ContentPage BackgroundColor="#3bc3a3">
+    	<StackLayout VerticalOptions="Center">
+	    	<Image Source="bitbot.png" />
+	    	<Label 
+	    		Text="Hello There!"
+	    		HorizontalTextAlignment="Center"
+	    		TextColor="#ffffff"
+	    		FontSize="36" />
+	    	<Label
+		    	HorizontalTextAlignment="Center"
+		    	TextColor="#ffffff"
+		    	FontSize="12">
+		    	<Label.Text>
+Learn more about how you can
+unleash the power of Xamarin
+through Bitrise!
+			    </Label.Text>
+			</Label>
+
+			<BoxView
+				HeightRequest="30" />
+
+		    <Button
+		    	x:Name="TourButton"
+		    	Text="Take tour"
+		    	HorizontalOptions="Center"
+		    	WidthRequest="200"
+			    BackgroundColor="#ffffff"
+			    TextColor="#3bc3a3" />
+
+    	</StackLayout>
+    </ContentPage>
+    <ContentPage BackgroundColor="#8151a8">
+        <StackLayout VerticalOptions="Center">
+	    	<Image Source="branch.png" />
+	    	<StackLayout
+	    		Padding="0, 40, 0, 0"
+	    		Spacing="10">
+
+	    		<Label 
+		    		Text="Cover all bases"
+		    		HorizontalTextAlignment="Center"
+		    		TextColor="#ffffff"
+		    		FontSize="24"
+		    		FontAttributes="Bold" />
+
+		    	<Label
+			    	HorizontalTextAlignment="Center"
+			    	TextColor="#ffffff"
+			    	FontSize="12" >
+			    	<Label.Text>
+Craft powerful workflows
+for every development stage
+from testing to distribution.
+			    	</Label.Text>
+			    </Label>
+			</StackLayout>
+    	</StackLayout>
+    </ContentPage>
+    <ContentPage BackgroundColor="#3bc3a3">
+    	<StackLayout
+    		VerticalOptions="Center"
+    		Spacing="0">
+
+	    	<StackLayout
+	    		BackgroundColor="#2c3e50"
+	    		Padding="25">
+
+	    		<Image Source="xtc.png" />
+	    	</StackLayout>
+	    	<StackLayout
+	    		BackgroundColor="#b455b6"
+	    		Padding="25">
+
+	    		<Image Source="xamarin.png" />
+	    	</StackLayout>
+	    	<StackLayout
+	    		BackgroundColor="#3498db"
+	    		Padding="25">
+
+	    		<Image Source="hockey.png" />
+	    	</StackLayout>
+	        <StackLayout
+	    		Padding="0, 20, 0, 0"
+	    		Spacing="10">
+
+	    		<Label 
+		    		Text="All connected"
+		    		HorizontalTextAlignment="Center"
+		    		TextColor="#ffffff"
+		    		FontSize="24"
+		    		FontAttributes="Bold" />
+
+		    	<Label
+		    		HorizontalTextAlignment="Center"
+			    	TextColor="#ffffff"
+			    	FontSize="12">
+			    	<Label.Text>
+Use all of Xamarin's products
+seamlessly through Bitrise and discover
+the beauty of automation!
+			    	</Label.Text>
+		    	</Label>
+		    		
+			</StackLayout>
+    	</StackLayout>
+    </ContentPage>
+    <ContentPage BackgroundColor="#8151a8">
+        <StackLayout VerticalOptions="Center">
+	    	<Image Source="ship.png" />
+	    	<StackLayout
+	    		Padding="0, 20, 0, 0"
+	    		Spacing="10">
+
+	    		<Label 
+		    		Text="Shipping like it's hot"
+		    		HorizontalTextAlignment="Center"
+		    		TextColor="#ffffff"
+		    		FontSize="24"
+		    		FontAttributes="Bold" />
+
+		    	<Label
+			    	HorizontalTextAlignment="Center"
+			    	TextColor="#ffffff"
+			    	FontSize="12" >
+			    	<Label.Text>
+Deploy to your testers or straight to
+the App Store and Google Play automatically.
+All it takes is adding a new step
+to your workflow.
+			    	</Label.Text>
+			    </Label>
+			</StackLayout>
+    	</StackLayout>
+    </ContentPage>
+    <ContentPage BackgroundColor="#8151a8">
+        <StackLayout
+        	VerticalOptions="Center"
+        	Spacing="30">
+
+	    	<Label
+	    		HorizontalTextAlignment="Center"
+	    		TextColor="#ffffff"
+	    		FontSize="24"
+	    		FontAttributes="Bold">
+	    		<Label.Text>
+Congrats on completing
+the Bitrise mini-hack!
+	    		</Label.Text>
+	    	</Label>
+	    	<Image Source="heart.png" />
+	    	<Label
+	    		Text="Just one more thing."
+		    	HorizontalTextAlignment="Center"
+		    	TextColor="#ffffff"
+		    	FontSize="18" />
+		    <Label
+		    	HorizontalTextAlignment="Center"
+		    	TextColor="#ffffff"
+		    	FontSize="12" >
+		    	<Label.Text>
+Tweet about completing the challenge
+and attach a selfie about you and your
+green build or the Bitrise booth.
+		    	</Label.Text>
+		    </Label>
+		    <Button
+		    	x:Name="TweetButton"
+		    	Image="tweet.png" />
+		    <Image Source="bitrise.png" />
+    	</StackLayout>
+    </ContentPage>
+</CarouselPage>

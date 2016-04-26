@@ -1,0 +1,18 @@
+{
+	"eventName": "SimonSays",
+    "url": "https://InternetButtonHub.azure-devices.net/devices/deviceeaa589217f034e06990ca83d92af3583/messages/events",
+    "requestType": "POST",
+    "headers": {
+        "Authorization": "SharedAccessSignature sr=InternetButtonHub.azure-devices.net&sig=oSmaC%2fdEbvj9excLjUinpd%2fHQiqOyoxJwy%2fqekPSh94%3d&se=1492272637&skn=iothubowner"
+    },
+    "json": {
+        "gameid": "{{g}}",
+        "activity": "{{a}}",
+        "user": "{{u}}",
+        "value": "{{v}}",
+        "timecreated": "{{SPARK_PUBLISHED_AT}}",
+         "guid": "{{SPARK_CORE_ID}}"
+    },
+    "nodefaults": true,
+    "mydevices": true
+}

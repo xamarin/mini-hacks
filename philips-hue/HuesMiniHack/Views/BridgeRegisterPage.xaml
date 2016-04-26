@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HuesMiniHack.Views.BridgeRegisterPage">
+	<ContentPage.Content>
+			<StackLayout>
+				<Label  Text="{Binding SelectedBridgeIP}"
+						XAlign="Center"
+						FontAttributes="Bold"/>
+
+				<Image  Source="{Binding LinkImageSource}"
+						Aspect="AspectFit"/>
+				
+				<Label  Text="Press the Link button on the hub before attempting to register your app"
+					    XAlign="Center"/>
+				
+				<Button Text="Register" 
+						Command="{Binding RegisterAppCommand}"
+						BackgroundColor="{Binding ButtonBackgroundColor}"
+						TextColor="White"/>
+			</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

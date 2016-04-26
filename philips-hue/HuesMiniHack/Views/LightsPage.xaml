@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HuesMiniHack.Views.LightsPage">
+	<ContentPage.Content>
+		<StackLayout>
+			<ListView 
+				CachingStrategy="RecycleElement" 
+				ItemsSource="{Binding Lights}"
+				SelectedItem="{Binding SelectedLight, Mode=TwoWay}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell
+							Text="{Binding Name}" 
+							Detail="{Binding Type}" 
+						></TextCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Button Text="Find Lamps" 
+					Command="{Binding LampDiscoveryCommand}"
+					BackgroundColor="{Binding ButtonBackgroundColor}"
+					TextColor="White"
+				/>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

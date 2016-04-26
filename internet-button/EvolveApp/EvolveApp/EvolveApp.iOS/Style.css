@@ -1,0 +1,50 @@
+﻿h1{
+	font-family    		: "SegoeUI-Light";
+	font-size        	: 38px;
+	text-overflow		: "ellipsis";
+	text-align			: "center";
+	lines				: 0;
+	color				: #1C2B39;
+	letter-spacing		: 0;
+	line-height			: 34;
+}
+
+h2{
+	font-family    		: "SegoeUI";
+	font-size        	: 20px;
+	text-overflow		: "ellipsis";
+	text-align			: "center";
+	lines				: 0;
+	color				: #07add0;
+	text-transform		: "uppercase";
+}
+
+body{
+	font-family      	: "SegoeUI";
+	color            	: #778687;
+	font-size        	: 16;
+	text-align			: "center";
+	line-height			: 21;
+}
+
+button{
+	font-family      	: "SegoeUI-SemiBold";
+	color            	: #ffffff;
+	font-size        	: 16;
+	text-align			: "center";
+	text-transform		: "uppercase";
+}
+
+widgetTitle{
+	font-family      	: "SegoeUI";
+	color            	: #778687;
+	font-size        	: 16;
+	text-align			: "center";
+}
+
+widgetCount{
+	font-family      	: "SegoeUI-Light";
+	color            	: #778687;
+	font-size        	: 80;
+	text-align			: "center";
+}
