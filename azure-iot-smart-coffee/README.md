@@ -47,7 +47,7 @@ Run the `DeviceProvisioningUtility` console application in `SmartCoffee.sln` to 
 Open `Constants.cs`. Enter the `Shared Access Signature` and your Azure IoT Hub url.
 
 ###### 4. Connect to Azure IoT Hub
-Azure IoT Hub offers secure, bi-directional communication with several protocol options, including HTTP, MQTT, and AMQP. SmartCoffee uses AMQP for communication. Open `SmartCoffeeService.cs` and navigate to the `GetCoffeeService` method. Create a new connection to your IoT Hub by pasting the following information.
+Azure IoT Hub offers secure, bi-directional communication with several protocol options, including HTTP, MQTT, and AMQP. SmartCoffee uses AMQP for communication. Open `SmartCoffeeService.cs` and navigate to the `GetCoffeeServiceApi` method. Create a new connection to your IoT Hub by pasting the following information.
 
 ```csharp
 if (connectionFactory == null)
