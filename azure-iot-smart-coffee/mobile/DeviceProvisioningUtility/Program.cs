@@ -45,7 +45,7 @@ namespace DeviceProvisioningUtility
 			}
 			catch (DeviceAlreadyExistsException)
 			{
-				device = await registryManager.GetDeviceAsync(deviceId);
+				device = await registryManager.GetDeviceAsync("coffeeMaker");
 			}
 
 			Console.WriteLine("Generated device key: {0}", device.Authentication.SymmetricKey.PrimaryKey);
