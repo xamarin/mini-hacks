@@ -24,7 +24,7 @@ namespace SmartCoffee
 
 		public static async Task<SmartCoffeeService> GetCoffeeServiceApi()
 		{
-			// TODO #3: Create a connection with Azure IoT Hub.
+			// TODO #4: Create a connection with Azure IoT Hub.
 
 			return null;
 		}
