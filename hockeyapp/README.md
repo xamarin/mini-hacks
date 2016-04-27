@@ -10,38 +10,25 @@ HockeyApp gives you the information you need to improve your app, evolve with th
 
 3. In Xamarin Studio, create a new Android or iOS project.
 
-4. Add a reference to the [HockeySDK Nuget](https://www.nuget.org/packages/HockeySDK.Xamarin).
+4. Add a reference to the [HockeySDK Nuget](https://www.nuget.org/packages/HockeySDK.Xamarin).  You should be using version *4.1.0-beta1*
 
 5. Initialize the SDK: For iOS, look for your FinishedLaunching in your AppDelegate.cs file and add the following code (be sure be sure to replace "HOCKEYAPP_APPID" with your own):
 
         public override bool FinishedLaunching (UIApplication app, NSDictionary options)
         {
-            //We MUST wrap our setup in this block to wire up
-            // Mono's SIGSEGV and SIGBUS signals
-            HockeyApp.Setup.EnableCustomCrashReporting (() => {
+            //Get the shared instance
+            var manager = BITHockeyManager.SharedHockeyManager;
 
-                //Get the shared instance
-                var manager = BITHockeyManager.SharedHockeyManager;
+            //Configure it to use our APP_ID
+            manager.Configure ("HOCKEYAPP_APPID");
 
-                //Configure it to use our APP_ID
-                manager.Configure ("HOCKEYAPP_APPID");
+            //Start the manager
+            manager.StartManager ();
 
-                //Start the manager
-                manager.StartManager ();
+            //Authenticate (there are other authentication options)
+            manager.Authenticator.AuthenticateInstallation ();            
 
-                //Authenticate (there are other authentication options)
-                manager.Authenticator.AuthenticateInstallation ();
-
-                //Rethrow any unhandled .NET exceptions as native iOS 
-                // exceptions so the stack traces appear nicely in HockeyApp
-                AppDomain.CurrentDomain.UnhandledException += (sender, e) => 
-                    Setup.ThrowExceptionAsNative(e.ExceptionObject);
-
-                TaskScheduler.UnobservedTaskException += (sender, e) => 
-                    Setup.ThrowExceptionAsNative(e.Exception);
-            });
-
-            //The rest of your code here
+			// The rest of your code here
             // ...
         }
 
@@ -55,37 +42,11 @@ HockeyApp gives you the information you need to improve your app, evolve with th
             {
                 base.OnCreate (bundle);
 
-                // Register the crash manager before Initializing the trace writer
-                HockeyApp.CrashManager.Register (this, HOCKEYAPP_APPID); 
+				// ... your own OnCreate implementation
+				CrashManager.Register(this, HOCKEYAPP_APPID);
 
-                // Register too with the Update Manager
-                HockeyApp.UpdateManager.Register (this, HOCKEYAPP_APPID);
-
-                // Register the Metrics Manager
-                HockeyApp.Metrics.MetricsManager.Register(this, Application, HOCKEYAPP_APPID);
-
-                // Initialize the Trace Writer
-                HockeyApp.TraceWriter.Initialize ();
-
-                // Wire up Unhandled Expcetion handler from Android
-                AndroidEnvironment.UnhandledExceptionRaiser += (sender, args) => 
-                {
-                    // Use the trace writer to log exceptions so HockeyApp finds them
-                    HockeyApp.TraceWriter.WriteTrace(args.Exception);
-                    args.Handled = true;
-                };
-
-                // Wire up the .NET Unhandled Exception handler
-                AppDomain.CurrentDomain.UnhandledException +=
-                    (sender, args) => HockeyApp.TraceWriter.WriteTrace(args.ExceptionObject);
-
-                // Wire up the unobserved task exception handler
-                TaskScheduler.UnobservedTaskException += 
-                    (sender, args) => HockeyApp.TraceWriter.WriteTrace(args.Exception);
-
-
+				// The rest of your code here
                 // ...
-
             }
         }  
 
