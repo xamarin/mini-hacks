@@ -8,7 +8,7 @@
 			<Label Text="{Binding LampStatus}" XAlign="Center"/>
 			<Label Text="{Binding LampBrightness}" XAlign="Center"/>
 
-			<Button Text="Alert" Command="{Binding lampAlertCommand}"/>
+			<Button Text="Alert" Command="{Binding LampAlertCommand}"/>
 			<Button Text="Turn On" Command="{Binding LampOnCommand}"/>
 			<Button Text="Turn Off" Command="{Binding LampOffCommand}"/>
 			<Button Text="Color Effect" Command="{Binding LampEffectCommand}"/>
