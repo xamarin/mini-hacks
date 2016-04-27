@@ -100,8 +100,7 @@ namespace AndroidApp
                 using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
                 {
                     //Get a stream
-					//lower quality for request.
-                    _bitmap.Compress(Bitmap.CompressFormat.Jpeg, 50, stream);
+                    _bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
                     stream.Seek(0, System.IO.SeekOrigin.Begin);
 
                     //Get and display the happiness score
