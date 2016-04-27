@@ -63,28 +63,33 @@ namespace AndroidApp
             // See http://developer.android.com/reference/android/media/ExifInterface.html
             using (Matrix mtx = new Matrix())
             {
-                ExifInterface exif = new ExifInterface(fileName);
-                var orientation = (Orientation)exif.GetAttributeInt(ExifInterface.TagOrientation, (int)Orientation.Undefined);
-
-                //TODO : handle FlipHorizontal, FlipVertical, Transpose and Transverse
-                //Undefined might be an emulator issue. Taking the assumption that the picture has been taken in portrait mode
-                switch (orientation)
+                if (Android.OS.Build.Product.Contains("Emulator"))
                 {
-                    case Orientation.Undefined:
-                    case Orientation.Rotate90:
-                        mtx.PreRotate(90);
-                        break;
-                    case Orientation.Rotate180:
-                        mtx.PreRotate(180);
-                        break;
-                    case Orientation.Rotate270:
-                        mtx.PreRotate(270);
-                        break;
-                    case Orientation.Normal:
-                        // Normal, do nothing
-                        break;
-                    default:
-                        break;
+                    mtx.PreRotate(90);
+                }
+                else
+                {
+                    ExifInterface exif = new ExifInterface(fileName);
+                    var orientation = (Orientation)exif.GetAttributeInt(ExifInterface.TagOrientation, (int)Orientation.Normal);
+
+                    //TODO : handle FlipHorizontal, FlipVertical, Transpose and Transverse
+                    switch (orientation)
+                    {
+                        case Orientation.Rotate90:
+                            mtx.PreRotate(90);
+                            break;
+                        case Orientation.Rotate180:
+                            mtx.PreRotate(180);
+                            break;
+                        case Orientation.Rotate270:
+                            mtx.PreRotate(270);
+                            break;
+                        case Orientation.Normal:
+                            // Normal, do nothing
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
                 if (mtx != null)
@@ -182,6 +187,9 @@ public class MainActivity : Activity
             //Get the bitmap with the right rotation
             _bitmap = BitmapHelpers.GetAndRotateBitmap(_file.Path);
 
+            //Display the image
+            _imageView.SetImageBitmap(_bitmap);
+
             using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
             {
                 //Get a stream
@@ -192,9 +200,6 @@ public class MainActivity : Activity
                 float result = await Core.GetAverageHappinessScore(stream);
                 _resultTextView.Text = Core.GetHappinessMessage(result);
             }
-
-            //Display the image
-            _imageView.SetImageBitmap(_bitmap);
         }
         catch (Exception ex)
         {
