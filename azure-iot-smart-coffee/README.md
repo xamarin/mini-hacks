@@ -82,14 +82,11 @@ The client app is now complete! We now can send messages directly to our interne
 In this section, we will deploy the "field gateway" application to a Raspberry Pi running Windows IoT Core, which is a compact version of Windows 10 for devices like the Raspberry Pi. This application will receive messages from Azure IoT Hub, such as "turn coffee maker on", the Raspberry Pi acts on that message by supplying power to the corresponding GPIO pins on the Pi to begin the brewing process.
 
 ###### 1. Configure the IoT Field Gateway application
-Enter your Azure IoT Hub name, device id, and device primary key using the virtual keyboard.
+The Raspberry Pi "field gateway" application should already be deployed on your coffee maker's Raspberry Pi in the Darwin Lounge, so all you have to do is enter your credentials. Alert a proctor in the Darwin Lounge area who can help switch the display to your coffee maker. In the three text fields you see, enter the following using the virtual keyboard:
 
-###### 2. Deploy to Raspberry Pi.
-Change the platform target to `ARM` and select the `Remote Device` option. Right-click the solution and select properties. Navigate to the `Debug` section and enter the IP address of the Raspberry Pi you are attempting to deploy to. If you aren't sure, be sure to ask a proctor!
-
-![](images/Remote_Debugging.png "Remote Debugging")
-
-Click `Remote Device` to deploy and begin debugging the field gateway app on the Raspberry Pi.
+1. **Azure IoT Hub name**: The subdomain of your Azure IoT Hub url. Example: If your url is `CoffeeIoTHack.azure-devices.net`, then your hub name is `CoffeeIoTHack`.
+2. **Device id**: Unless you otherwise configured the `Device Provisioning Tool`, this should be `coffeeMaker`.
+3. **Device primary key**: Visit the `coffeeMaker` device in Azure IoT Hub and enter the primary key on the virtual keyboard.
 
 #### Start Brewing
 In this section, you will begin the brewing process from the SmartCoffee application running on iOS and Android via Azure IoT Hub.
