@@ -34,7 +34,7 @@ Congradulations! You have just created an Azure IoT Hub, which will broker all c
 In this section, you will build the SmartCoffee app using Xamarin.Forms to allow end users to remotely start and stop the brewing process.
 
 ###### 1. Open `SmartCoffee`
-[Download the minihack repository](https://github.com/pierceboggan/smartcoffee-minihack/) and extract the archive. Navigate to the `mobile` folder, and open `SmartCoffee.sln` using either Xamarin Studio Communitity Edition or Visual Studio Community Edition.
+Download the minihack repository and extract the archive. Navigate to the `mobile` folder, and open `SmartCoffee.sln` using either Xamarin Studio Communitity Edition or Visual Studio Community Edition.
 
 ###### 2. Generate Shared Access Signature
 Each device must have it's own unique identifier and key. You can use [device identity APIs](https://azure.microsoft.com/en-us/documentation/articles/iot-hub-devguide/#identityregistry) to programmatically create identities for IoT devices. To speed things up, we will use the `DeviceProvisioningUtility` to generate values for us. Insert your IoT Hub url, policy name, policy key, and connection string from the Azure Portal into `Program.cs`.
