@@ -93,14 +93,17 @@ namespace AndroidApp
             {
                 //Get the bitmap with the right rotation
                 _bitmap = BitmapHelpers.GetAndRotateBitmap(_file.Path);
-                
+
+                //Resize the picture to be under 4MB (Emotion API limitation and better for Android memory)
+                _bitmap = Bitmap.CreateScaledBitmap(_bitmap, 2000, (int)(2000*_bitmap.Height/_bitmap.Width), false);
+
                 //Display the image
                 _imageView.SetImageBitmap(_bitmap);
                 
                 using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
                 {
                     //Get a stream
-                    _bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+                    _bitmap.Compress(Bitmap.CompressFormat.Jpeg, 90, stream);
                     stream.Seek(0, System.IO.SeekOrigin.Begin);
 
                     //Get and display the happiness score
