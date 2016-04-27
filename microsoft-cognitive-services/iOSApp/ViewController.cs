@@ -11,10 +11,10 @@ namespace iOSApp
 		{
 			// Note: this .ctor should not contain any initialization logic.
 		}
-
-		public override void AwakeFromNib ()
+		
+		public override void ViewDidAppear (bool animated)
 		{
-			TakePhotoButton.TouchDown += OnTakePhotoPressed;
+    			TakePhotoButton.TouchDown += OnTakePhotoPressed;
 		}
 
 		void OnTakePhotoPressed (object sender, EventArgs eventArgs)
