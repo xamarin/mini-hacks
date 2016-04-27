@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
@@ -93,13 +93,14 @@ namespace AndroidApp
             {
                 //Get the bitmap with the right rotation
                 _bitmap = BitmapHelpers.GetAndRotateBitmap(_file.Path);
-
-				//Display the image
-				_imageView.SetImageBitmap (_bitmap);
-
+                
+                //Display the image
+                _imageView.SetImageBitmap(_bitmap);
+                
                 using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
                 {
                     //Get a stream
+					//lower quality for request.
                     _bitmap.Compress(Bitmap.CompressFormat.Jpeg, 50, stream);
                     stream.Seek(0, System.IO.SeekOrigin.Begin);
 
@@ -107,8 +108,6 @@ namespace AndroidApp
                     float result = await Core.GetAverageHappinessScore(stream);
                     _resultTextView.Text = Core.GetHappinessMessage(result);
                 }
-
-                
             }
             catch (Exception ex)
             {
