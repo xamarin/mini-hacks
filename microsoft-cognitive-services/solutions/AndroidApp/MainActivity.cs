@@ -94,10 +94,13 @@ namespace AndroidApp
                 //Get the bitmap with the right rotation
                 _bitmap = BitmapHelpers.GetAndRotateBitmap(_file.Path);
 
+				//Display the image
+				_imageView.SetImageBitmap (_bitmap);
+
                 using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
                 {
                     //Get a stream
-                    _bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+                    _bitmap.Compress(Bitmap.CompressFormat.Jpeg, 50, stream);
                     stream.Seek(0, System.IO.SeekOrigin.Begin);
 
                     //Get and display the happiness score
@@ -105,8 +108,7 @@ namespace AndroidApp
                     _resultTextView.Text = Core.GetHappinessMessage(result);
                 }
 
-                //Display the image
-                _imageView.SetImageBitmap(_bitmap);
+                
             }
             catch (Exception ex)
             {
