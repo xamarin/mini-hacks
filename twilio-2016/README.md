@@ -38,6 +38,9 @@ If you're on Windows, head over to [this guide](https://github.com/TwilioDevEd/i
 
 Once you have it set up correctly, open it in your browser and you should be looking at a chat application. You've been granted an access token by the server and assigned a random username. We'll use this same server infrastructure to request a token for our mobile application so keep it running and keep the URL handy. I'll refer to this URL later as `YOUR_TOKEN_SERVER_URL`.
 
+**Note:**
+If you are on Windows and targeting iOS or if you are trying to run on device, the server running on `localhost` won't be reachable on the public internet. You have two choices. One option is deploying the project to a web server (or to Azure, Heroku, etc.) and using that URL instead of `localhost`. Alternatively, you can use something like [ngrok](http://ngrok.com) to create an HTTP tunnel to your `localhost` instance. You can [follow this post](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html) to see how and why you might want to use ngrok. If you're on Windows, make sure to run ngrok like this: `ngrok http [your port] -http-header="localhost:[your port]"`
+
 Now it's time to choose your adventure. Open up the mini hack solution and jump to the platform you'd like to build your chat application in:
 
 - [iOS](#ios)
