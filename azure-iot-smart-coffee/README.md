@@ -23,7 +23,7 @@ If you don't already have an Azure account, [start an Azure free trial](https://
 ###### 2. Create a new Azure IoT Hub
 Create a new Azure IoT Hub app from the Azure Portal by navigating to `New->Internet of Things->Azure IoT Hub`.
 
-![](/images/Creating_Azure_IoT_Hub.png "New Azure IoT Hub")
+![](images/Creating_Azure_IoT_Hub.png "New Azure IoT Hub")
 
 ###### 3. Configure Azure IoT Hub
 Give the IoT Hub a unique name for the hub, as well as a unique identifier for the Azure Resource Group. Leave the remaining defaults, and click `Create`. An IoT Hub will be created and deployed.
@@ -39,7 +39,7 @@ Download the minihack repository and extract the archive. Navigate to the `mobil
 ###### 2. Generate Shared Access Signature
 Each device must have it's own unique identifier and key. You can use [device identity APIs](https://azure.microsoft.com/en-us/documentation/articles/iot-hub-devguide/#identityregistry) to programmatically create identities for IoT devices. To speed things up, we will use the `DeviceProvisioningUtility` to generate values for us. Insert your IoT Hub url, policy name, policy key, and connection string from the Azure Portal into `Program.cs`.
 
-![](/images/Shared_Access_Policies.png "Shared Access Policies")
+![](images/Shared_Access_Policies.png "Shared Access Policies")
 
 Run the `DeviceProvisioningUtility` console application in `SmartCoffee.sln` to generate an identity (including a security key) for a device named `coffeeMaker` in IoT Hub. This will also generate a unique `Shared Access Signature (SAS)` token that will be used in the application as well. Be sure to copy both of these values for later use.
 
@@ -87,7 +87,7 @@ Enter your Azure IoT Hub name, device id, and device primary key using the virtu
 ###### 2. Deploy to Raspberry Pi.
 Change the platform target to `ARM` and select the `Remote Device` option. Right-click the solution and select properties. Navigate to the `Debug` section and enter the IP address of the Raspberry Pi you are attempting to deploy to. If you aren't sure, be sure to ask a proctor!
 
-![](/images/Remote_Debugging.png "Remote Debugging")
+![](images/Remote_Debugging.png "Remote Debugging")
 
 Click `Remote Device` to deploy and begin debugging the field gateway app on the Raspberry Pi.
 
