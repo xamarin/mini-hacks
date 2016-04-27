@@ -181,7 +181,8 @@ async Task<string> GetToken ()
 {
     var deviceId = UIDevice.CurrentDevice.IdentifierForVendor.AsString ();
 
-    var tokenEndpoint = $"https://YOUR_TOKEN_SERVER_URL/token.php?device={deviceId}";
+    // If you are using PHP it will be $"https://YOUR_TOKEN_SERVER_URL/token.php?device={deviceId}"
+    var tokenEndpoint = $"https://YOUR_TOKEN_SERVER_URL/token?device={deviceId}";
 
     var http = new HttpClient ();
     var data = await http.GetStringAsync (tokenEndpoint);
@@ -438,7 +439,8 @@ async Task<string> GetIdentity()
 	var androidId = Android.Provider.Settings.Secure.GetString(ContentResolver,
 						Android.Provider.Settings.Secure.AndroidId);
 
-	var tokenEndpoint = $"https://YOUR_TOKEN_URL/token.php?device={androidId}";
+ 	// If you are using PHP it will be $"https://YOUR_TOKEN_SERVER_URL/token.php?device={deviceId}"
+    	var tokenEndpoint = $"https://YOUR_TOKEN_SERVER_URL/token?device={deviceId}";
 
 	var http = new HttpClient();
 	var data = await http.GetStringAsync(tokenEndpoint);
