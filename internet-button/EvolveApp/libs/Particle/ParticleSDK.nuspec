@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ParticleXamarinSDK</id>
+    <version>1.2.1</version>
+    <authors>Michael Watson</authors>
+    <owners>Michael Watson</owners>
+    <tags>xamarin particle C# .net</tags>
+    <licenseUrl>https://github.com/spark/spark-sdk-ios/blob/master/LICENSE</licenseUrl>
+    <iconUrl>http://xamarin.com/content/images/nuget/xamarin.png</iconUrl>
+    <projectUrl>https://github.com/michael-watson/particle-xamarin</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Particle Cloud SDK for C# PCL Projects, specifically Xamarin products. This does work with Xamrarin.Forms as well.</description>
+    <dependencies>
+      <group targetFramework="portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10">
+        <dependency id="Newtonsoft.Json" version="8.0.2"/>
+        <dependency id="modernhttpclient" version="2.4.2"/>
+      </group>
+    </dependencies>
+    <references>
+       <group targetFramework="portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10">
+        <reference file="Particle.dll" />
+        <reference file="Particle.pdb" />
+      </group>
+    </references>
+  </metadata>
+  <files>
+    <!--PCL-->
+    <file src="Particle/bin/Release/Particle.dll" target="lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="Particle/bin/Release/Particle.pdb" target="lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+  </files>
+</package>

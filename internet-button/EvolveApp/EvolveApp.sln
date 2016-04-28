@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvolveApp.UWP", "EvolveApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvolveApp.Windows", "EvolveApp\EvolveApp.Windows\EvolveApp.Windows.csproj", "{D52E9BDE-EF7F-480F-9C83-7CE7DDE803E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particle", "..\..\particle-xamarin\Particle\Particle.csproj", "{A6E8BFFA-840F-4078-88F4-D4179C23382F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particle", "libs\Particle\Particle\Particle.csproj", "{A6E8BFFA-840F-4078-88F4-D4179C23382F}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
