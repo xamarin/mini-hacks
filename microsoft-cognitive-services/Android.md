@@ -316,6 +316,7 @@ Right click on the Android Project and select Properties.  Click on the Android 
 
 * CAMERA
 * WRITE_EXTERNAL_STORAGE
+* INTERNET
 
 Save the project properties.
 
